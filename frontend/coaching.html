@@ -3,32 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coaching - StivMab Consulting</title>
+  <title data-i18n="coachingTitle">Coaching - StivMab Consulting</title>
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- i18next principal -->
+  <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
+  <!-- Ton script i18next externe -->
+  <script src="assets/js/i18next-init.js"></script>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="assets/images/logo.png" alt="StivMab Consulting Logo"></a>
+      <!-- Logo avec menu déroulant de langues -->
+      <div class="logo-dropdown">
+        <img id="logo" src="assets/images/logo.jpg" alt="StivMab Consulting Logo">
+        <ul class="lang-menu">
+          <li data-lang="fr">FR</li>
+          <li data-lang="en">EN</li>
+          <li data-lang="de">DE</li>
+        </ul>
       </div>
+
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html" class="btn-login">Connexion</a></li>
+        <li><a href="index.html" data-i18n="navHome"></a></li>
+        <li><a href="coaching.html" data-i18n="navCoaching"></a></li>
+        <li><a href="about.html" data-i18n="navAbout"></a></li>
+        <li><a href="contact.html" data-i18n="navContact"></a></li>
+        <li><a href="login.html" class="btn-login" data-i18n="navLogin"></a></li>
       </ul>
     </nav>
   </header>
 
   <section class="coaching-section">
-    <h2>Nos coachings</h2>
+    <h2 data-i18n="coachingTitle">Nos coachings</h2>
     <div id="coachings-container" class="coachings-container">
-      <!-- Les coachings vont apparaître ici -->
+      <!-- Les coachings seront affichés ici via JS -->
     </div>
   </section>
 
+  <!-- Script pour récupérer les coachings depuis l'API -->
   <script src="assets/js/script.js"></script>
 </body>
 </html>

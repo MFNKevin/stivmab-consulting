@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StivMab Consulting</title>
+  <title data-i18n="title">StivMab Consulting</title>
   <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- i18next -->
+  <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
+  <script src="assets/js/i18next-init.js"></script>
 </head>
 <body>
   <header>
     <nav class="navbar">
-      <div class="logo">
-        <a href="index.html"><img src="assets/images/logo.jpg" alt="StivMab Consulting Logo"></a>
-      </div>
+      <!-- Rubriques (centrées) -->
       <ul class="nav-links">
-        <li><a href="index.html">Accueil</a></li>
-        <li><a href="coaching.html">Coaching</a></li>
-        <li><a href="about.html">À propos</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="login.html" class="btn-login">Connexion</a></li>
+        <li><a href="index.html" data-i18n="navHome"></a></li>
+        <li><a href="coaching.html" data-i18n="navCoaching"></a></li>
+        <li><a href="about.html" data-i18n="navAbout"></a></li>
+        <li><a href="contact.html" data-i18n="navContact"></a></li>
+        <li><a href="login.html" class="btn-login" data-i18n="navLogin"></a></li>
       </ul>
+
+      <!-- Logo + menu langues (à droite) -->
+      <div class="logo-dropdown">
+        <img id="logo" src="assets/images/logo.jpg" alt="StivMab Consulting Logo">
+        <ul id="lang-menu" class="lang-menu">
+          <li data-lang="fr">FR</li>
+          <li data-lang="en">EN</li>
+          <li data-lang="de">DE</li>
+        </ul>
+      </div>
     </nav>
   </header>
 
   <section class="hero">
-    <h1>Bienvenue chez <span>StivMab Consulting</span></h1>
-    <p>Votre partenaire pour réussir votre projet d’étude et d’investissement à l’étranger.</p>
-    <a href="coaching.html" class="btn">Découvrir nos coachings</a>
+    <h1 data-i18n="heroTitle"></h1>
+    <p data-i18n="heroSubtitle"></p>
+    <a href="coaching.html" class="btn" data-i18n="heroBtn"></a>
   </section>
 </body>
 </html>
