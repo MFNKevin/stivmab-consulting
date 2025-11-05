@@ -1,44 +1,332 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="title">StivMab Consulting</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title data-i18n="title">StivMab Consulting / PrePaDoc</title>
 
-  <!-- i18next -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Owl Carousel CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+  <!-- Font Awesome (CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Your main stylesheet -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <!-- i18next (in head so content keys can be replaced asap) -->
   <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
   <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
+  <!-- your i18next initializer -->
   <script src="assets/js/i18next-init.js"></script>
+
+  
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <!-- Rubriques (centrées) -->
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="navHome"></a></li>
-        <li><a href="coaching.html" data-i18n="navCoaching"></a></li>
-        <li><a href="about.html" data-i18n="navAbout"></a></li>
-        <li><a href="contact.html" data-i18n="navContact"></a></li>
-        <li><a href="login.html" class="btn-login" data-i18n="navLogin"></a></li>
-      </ul>
 
-      <!-- Logo + menu langues (à droite) -->
-      <div class="logo-dropdown">
-        <img id="logo" src="assets/images/logo.jpg" alt="StivMab Consulting Logo">
-        <ul id="lang-menu" class="lang-menu">
-          <li data-lang="fr">FR</li>
-          <li data-lang="en">EN</li>
-          <li data-lang="de">DE</li>
-        </ul>
+  <!-- TOPBAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <div class="lang_box mr-3 d-flex align-items-center">
+          <img src="assets/images/flag-fr.png" alt="flag" style="height:18px; margin-right:8px;">
+          <span data-i18n="langLabel">Français</span>
+        </div>
+        <div class="contact_nav d-none d-md-flex">
+          <a href="tel:+01123455678990"><i class="fa fa-phone"></i><span class="ml-1">+01 123455678990</span></a>
+          <a href="mailto:Stevemab@gmail.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">Stevemab@gmail.com</span></a>
+        </div>
       </div>
-    </nav>
-  </header>
+      <div class="d-flex align-items-center">
+        <div class="social_box mr-3">
+          <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- HEADER / NAV -->
+  <div class="header_bottom py-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <!-- centered nav links -->
+        <div class="nav-center">
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
+            <li><a href="coaching.html" data-i18n="navCoaching">Coaching</a></li>
+            <li><a href="about.html" data-i18n="navFormation">Formation</a></li>
+            <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
+            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
+          </ul>
+        </div>
+
+        <!-- logo at right with dropdown language menu -->
+        <div class="logo-dropdown" id="logo-dropdown">
+          <img id="logo" src="assets/images/logo.jpg" alt="Logo">
+          <ul id="lang-menu" class="lang-menu">
+            <li data-lang="fr">FR</li>
+            <li data-lang="en">EN</li>
+            <li data-lang="de">DE</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO / SLIDER (simple static slide for now) -->
   <section class="hero">
-    <h1 data-i18n="heroTitle"></h1>
-    <p data-i18n="heroSubtitle"></p>
-    <a href="coaching.html" class="btn" data-i18n="heroBtn"></a>
+    <div class="container">
+      <h1 data-i18n="heroTitle">Bienvenue chez <span>StivMab Consulting</span></h1>
+      <p data-i18n="heroSubtitle">Votre partenaire pour réussir votre projet d’étude et d’investissement à l’étranger.</p>
+      <div class="mt-4">
+        <a class="btn-primary-custom mr-2" href="coaching.html" data-i18n="heroBtn">Découvrir nos coachings</a>
+        <a class="btn-primary-custom" href="contact.html">Contactez-nous</a>
+      </div>
+    </div>
   </section>
+
+  <!-- SERVICES (extrait du template) -->
+  <section class="service_section layout_padding py-5">
+    <div class="container">
+      <div class="heading_container text-center mb-4">
+        <h2 data-i18n="servicesTitle">Nos services</h2>
+        <p data-i18n="servicesSubtitle">Coaching professionnel pour étudiants et investisseurs. (Extrait)</p>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="box p-3 text-center h-100">
+            <div class="img-box mb-3"><img src="assets/images/logo.jpg" alt="" style="height:70px;"></div>
+            <h5 data-i18n="service1Title">Aide à l'obtention du passeport</h5>
+            <p data-i18n="service1Text">Accompagnement administratif complet.</p>
+            <a href="#" class="d-inline-block mt-2">En savoir plus</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="box p-3 text-center h-100">
+            <div class="img-box mb-3"><img src="assets/images/logo.jpg" alt="" style="height:70px;"></div>
+            <h5 data-i18n="service2Title">Aide à l'obtention du visa</h5>
+            <p data-i18n="service2Text">Préparation dossier et coachings.</p>
+            <a href="#" class="d-inline-block mt-2">En savoir plus</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="box p-3 text-center h-100">
+            <div class="img-box mb-3"><img src="assets/images/logo.jpg" alt="" style="height:70px;"></div>
+            <h5 data-i18n="service3Title">Accompagnement complet</h5>
+            <p data-i18n="service3Text">Suivi personnalisé du processus.</p>
+            <a href="#" class="d-inline-block mt-2">En savoir plus</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+          <div class="box p-3 text-center h-100">
+            <div class="img-box mb-3"><img src="assets/images/logo.jpg" alt="" style="height:70px;"></div>
+            <h5 data-i18n="service4Title">Management</h5>
+            <p data-i18n="service4Text">Conseil et gestion de projet.</p>
+            <a href="#" class="d-inline-block mt-2">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about_section py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <h2 data-i18n="aboutTitle">À propos</h2>
+          <p data-i18n="aboutText">StivMab Consulting accompagne les candidats africains souhaitant étudier ou investir en Europe. Nous proposons coaching, préparation dossier, et accompagnement sur-mesure.</p>
+          <a href="#" class="btn-primary-custom">En savoir plus</a>
+        </div>
+        <div class="col-md-6 text-center">
+          <img src="assets/images/logo.jpg" alt="about" style="max-width:100%; border-radius:8px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS (light) -->
+  <section class="project_section py-5">
+    <div class="container">
+      <div class="heading_container text-center mb-4">
+        <h2 data-i18n="projectsTitle">Projets</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <div class="box p-3"><img src="assets/images/logo.jpg" alt="" style="width:100%; height:auto;"><h5 class="mt-2">Projet 1</h5></div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="box p-3"><img src="assets/images/logo.jpg" alt="" style="width:100%; height:auto;"><h5 class="mt-2">Projet 2</h5></div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="box p-3"><img src="assets/images/logo.jpg" alt="" style="width:100%; height:auto;"><h5 class="mt-2">Projet 3</h5></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS (light) -->
+  <section class="client_section py-5 bg-light">
+    <div class="container">
+      <div class="heading_container heading_center text-center mb-4">
+        <h2 data-i18n="testimonialsTitle">Témoignages</h2>
+      </div>
+      <div id="testimonialsCarousel" class="owl-carousel">
+        <div class="item text-center p-4">
+          <img src="assets/images/junior.jpg" alt="" style="height:80px; border-radius:50%;"><h5 class="mt-2">Belvitas Lucas</h5><p>Client</p>
+          <p class="mt-2">"Très bon accompagnement, très professionnel."</p>
+        </div>
+        <div class="item text-center p-4">
+          <img src="assets/images/falcon.jpg" alt="" style="height:80px; border-radius:50%;"><h5 class="mt-2">Morojink</h5><p>Client</p>
+          <p class="mt-2">"Service impeccable et rapide."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact_section py-5">
+    <div class="container">
+      <div class="heading_container text-center mb-4">
+        <h2 data-i18n="contactTitle">Contactez-nous</h2>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <form id="contactForm">
+            <div class="form-group">
+              <input class="form-control" type="text" placeholder="Nom" required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="tel" placeholder="Téléphone" required>
+            </div>
+            <div class="form-group">
+              <input class="form-control" type="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+            </div>
+            <button class="btn-primary-custom" type="submit">ENVOYER</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div style="height:300px; background:#e9ecef; border-radius:8px; display:flex; align-items:center; justify-content:center;">
+            <p>Carte / Google Map (à placer)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO & FOOTER -->
+  <section class="info_section py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 data-i18n="footerLinksTitle">Liens rapides</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Accueil</a></li>
+            <li><a href="service.html" class="text-white">Services</a></li>
+            <li><a href="about.html" class="text-white">À propos</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 data-i18n="footerSubscribeTitle">Newsletter</h5>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <input class="form-control" placeholder="Entrer votre e-mail">
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-warning" type="submit">S'abonner</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p>+01 123455678990<br/>stevemab@gmail.com</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; <span id="displayYear"></span> PrePaDoc / StivMab Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRIPTS -->
+  <!-- jQuery (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <!-- Popper & Bootstrap JS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+
+  <!-- Owl Carousel (CDN) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- custom scripts: your i18next init is already included in head; we include custom behaviour here -->
+  <script src="assets/js/script.js"></script> <!-- fetchCoachings etc -->
+  <script src="assets/js/custom.js"></script> <!-- optional custom effects -->
+
+  <script>
+    // Small initializers for carousels and UI
+    $(document).ready(function(){
+      // Testimonials carousel
+      if (typeof $.fn.owlCarousel !== 'undefined') {
+        $("#testimonialsCarousel").owlCarousel({
+          items:1,
+          loop:true,
+          margin:10,
+          autoplay:true,
+          autoplayTimeout:5000
+        });
+      }
+
+      // Year in footer
+      document.getElementById('displayYear').innerText = new Date().getFullYear();
+
+      // Logo dropdown toggle (click to open, click outside closes)
+      const logoDropdown = document.getElementById('logo-dropdown');
+      const langMenu = document.getElementById('lang-menu');
+      if (logoDropdown && langMenu) {
+        logoDropdown.addEventListener('click', (e) => {
+          e.stopPropagation();
+          logoDropdown.classList.toggle('show-menu');
+        });
+
+        langMenu.querySelectorAll('li').forEach(li => {
+          li.addEventListener('click', (ev) => {
+            const newLang = li.getAttribute('data-lang');
+            // call changeLanguage from your i18next-init.js (it defines changeLanguage in its scope)
+            if (typeof changeLanguage === "function") {
+              changeLanguage(newLang);
+            } else {
+              // fallback: set localStorage and reload
+              localStorage.setItem('language', newLang);
+              location.reload();
+            }
+            logoDropdown.classList.remove('show-menu'); // close menu
+          });
+        });
+
+        // close when clicking outside
+        document.addEventListener('click', () => {
+          logoDropdown.classList.remove('show-menu');
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>

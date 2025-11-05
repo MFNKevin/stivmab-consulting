@@ -1,27 +1,66 @@
+/* ============================
+   STYLES GLOBAUX
+============================ */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
   background-color: #1E3A5F;
   color: white;
 }
 
-/* ===== HEADER ===== */
-header {
-  background-color: #1E3A5F;
-  border-bottom: 3px solid #FFD700;
-  padding: 10px 40px;  
-  margin-top: 25px;
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
 }
 
-/* ===== BARRE DE NAVIGATION ===== */
+a:hover {
+  color: #FFD700;
+}
+
+/* ============================
+   TOPBAR
+============================ */
+.topbar {
+  background-color: #1c2f4f;
+  border-bottom: 2px solid #FFD700;
+  font-size: 14px;
+  color: #fff;
+}
+
+.topbar a {
+  color: #FFD700;
+  font-weight: 500;
+}
+
+.topbar a:hover {
+  color: white;
+}
+
+.social_box a {
+  color: #FFD700;
+}
+
+.social_box a:hover {
+  color: white;
+}
+
+/* ============================
+   HEADER / NAVIGATION
+============================ */
+.header_bottom {
+  background-color: #1E3A5F;
+  border-bottom: 3px solid #FFD700;
+}
+
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center; /* centre les liens */
+  justify-content: center;
   position: relative;
 }
 
-/* ===== NAVIGATION PRINCIPALE (centrée) ===== */
+/* Liens de navigation */
 .nav-links {
   list-style: none;
   display: flex;
@@ -32,143 +71,276 @@ header {
 
 .nav-links a {
   color: #FFD700;
-  text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   font-size: 16px;
-  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: white;
 }
 
-/* ===== LOGO (aligné à droite) ===== */
+/* Logo à gauche */
 .logo-dropdown {
   position: absolute;
-  left: 40px; /* extrême droite */
+  left: 40px;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 .logo-dropdown img {
-  height: 75px;
-  width: auto;
+  height: 65px;
+  width: 65px;
   display: block;
-  border-radius: 50%; /* arrondi (optionnel) */
+  border-radius: 50%;
   border: 2px solid #FFD700;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-/* ===== MENU DÉROULANT DES LANGUES ===== */
+.logo-dropdown img:hover {
+  transform: scale(1.05);
+}
+
+/* Menu langues déroulant */
 .lang-menu {
   display: none;
   position: absolute;
-  top: 55px;
-  right: 0;
+  top: 70px;
+  left: 0;
   background-color: #FFD700;
-  border-radius: 6px;
+  border-radius: 8px;
   list-style: none;
   padding: 5px 0;
   margin: 0;
-  min-width: 80px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  min-width: 100px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
 .lang-menu li {
-  padding: 8px 10px;
+  padding: 8px 12px;
   text-align: center;
   cursor: pointer;
   color: #1E3A5F;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 .lang-menu li:hover {
-  background-color: #1c2f4f;
+  background-color: #1E3A5F;
   color: #FFD700;
 }
 
-/* Affiche le menu au survol */
-.logo-dropdown:hover .lang-menu {
+/* Affiche le menu quand on clique */
+.logo-dropdown.show-menu .lang-menu {
   display: block;
 }
 
-/* ===== BOUTON DE CONNEXION ===== */
+/* Bouton de connexion */
 .btn-login {
   background-color: white;
-  color: #FFD700;
+  color: #1E3A5F;
   padding: 8px 16px;
   border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
+  font-weight: 700;
   transition: all 0.3s ease;
-  
 }
 
 .btn-login:hover {
-  background-color: #1E3A5F;
-  color: white;
+  background-color: #FFD700;
+  color: #1E3A5F;
 }
 
-/* ===== SECTION HERO ===== */
+/* ============================
+   SECTION HERO
+============================ */
 .hero {
   text-align: center;
   padding: 100px 20px;
+  background: linear-gradient(to bottom, #1E3A5F 0%, #122541 100%);
+}
+
+.hero h1 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 15px;
 }
 
 .hero h1 span {
   color: #FFD700;
 }
 
-.hero .btn {
+.hero p {
+  font-size: 18px;
+  color: #ddd;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.btn-primary-custom {
   background-color: #FFD700;
   color: #1E3A5F;
   padding: 10px 20px;
   border-radius: 8px;
-  font-size: 18px;
   font-weight: bold;
-  text-decoration: none;  
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-/*coaching*/
-.coaching-section {
-  text-align: center;
-  padding: 50px 20px;
+.btn-primary-custom:hover {
+  background-color: white;
+  color: #1E3A5F;
 }
 
-.coaching-section h2 {
-  font-size: 36px;
-  color: #FFD700; /* jaune d’or */
-  margin-bottom: 40px;
+/* ============================
+   SECTION SERVICES
+============================ */
+.service_section {
+  background-color: #1E3A5F;
 }
 
-.coachings-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+.service_section h2 {
+  color: #FFD700;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
-.coaching-card {
-  background-color: #1E3A5F; /* bleu foncé */
+.service_section p {
+  color: #ddd;
+}
+
+.box {
+  background-color: #1c2f4f;
   border: 2px solid #FFD700;
-  border-radius: 12px;
-  width: 300px;
-  padding: 20px;
-  color: white;
+  border-radius: 10px;
   transition: transform 0.3s;
 }
 
-.coaching-card:hover {
+.box:hover {
   transform: scale(1.05);
 }
 
-.coaching-card h3 {
-  color: #FFD700;
-  margin-bottom: 10px;
+/* ============================
+   SECTION ABOUT
+============================ */
+.about_section {
+  background-color: #1c2f4f;
 }
 
-.coaching-card p {
-  font-size: 16px;
-  line-height: 1.5;
+.about_section h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.about_section p {
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* ============================
+   SECTION PROJECTS
+============================ */
+.project_section h2 {
+  color: #FFD700;
+  margin-bottom: 20px;
+}
+
+.project_section .box {
+  background-color: #1c2f4f;
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+}
+
+/* ============================
+   SECTION TESTIMONIALS
+============================ */
+.client_section {
+  background-color: #f9f9f9;
+  color: #1E3A5F;
+}
+
+.client_section h2 {
+  color: #1E3A5F;
+}
+
+/* ============================
+   SECTION CONTACT
+============================ */
+.contact_section h2 {
+  color: #FFD700;
+  font-weight: 700;
+}
+
+.contact_section .form-control {
+  border-radius: 6px;
+  border: 1px solid #FFD700;
+}
+
+.contact_section button {
+  background-color: #FFD700;
+  color: #1E3A5F;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.contact_section button:hover {
+  background-color: white;
+}
+
+/* ============================
+   FOOTER
+============================ */
+.info_section {
+  background-color: #122541;
+  border-top: 2px solid #FFD700;
+  color: white;
+}
+
+.info_section h5 {
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+.info_section a {
+  color: #FFD700;
+}
+
+.info_section a:hover {
+  color: white;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .logo-dropdown {
+    position: relative;
+    left: 0;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
 }

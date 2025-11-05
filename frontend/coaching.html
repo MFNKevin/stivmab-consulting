@@ -1,48 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="coachingTitle">Coaching - StivMab Consulting</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title data-i18n="coachingTitle">Coaching - StivMab Consulting / PrePaDoc</title>
 
-  <!-- i18next principal -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Your main stylesheet -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
   <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
-  <!-- Ton script i18next externe -->
   <script src="assets/js/i18next-init.js"></script>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <!-- Logo avec menu déroulant de langues -->
-      <div class="logo-dropdown">
-        <img id="logo" src="assets/images/logo.jpg" alt="StivMab Consulting Logo">
-        <ul class="lang-menu">
-          <li data-lang="fr">FR</li>
-          <li data-lang="en">EN</li>
-          <li data-lang="de">DE</li>
-        </ul>
+  <!-- ======= TOPBAR ======= -->
+  <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <div class="lang_box mr-3 d-flex align-items-center">
+          <img src="assets/images/flag-fr.png" alt="flag" style="height:18px; margin-right:8px;">
+          <span data-i18n="langLabel">Français</span>
+        </div>
+        <div class="contact_nav d-none d-md-flex">
+          <a href="tel:+01123455678990"><i class="fa fa-phone"></i><span class="ml-1">+01 123455678990</span></a>
+          <a href="mailto:Stevemab@gmail.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">Stevemab@gmail.com</span></a>
+        </div>
+      </div>
+      <div class="social_box">
+        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= HEADER / NAV ======= -->
+  <div class="header_bottom py-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <!-- centered nav links -->
+        <div class="nav-center">
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
+            <li><a href="coaching.html" class="active" data-i18n="navCoaching">Coaching</a></li>
+            <li><a href="about.html" data-i18n="navFormation">Formation</a></li>
+            <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
+            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
+            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Connexion</a></li>
+          </ul>
+        </div>
+
+        <!-- logo à droite avec menu langue -->
+        <div class="logo-dropdown" id="logo-dropdown">
+          <img id="logo" src="assets/images/logo.jpg" alt="Logo">
+          <ul id="lang-menu" class="lang-menu">
+            <li data-lang="fr">FR</li>
+            <li data-lang="en">EN</li>
+            <li data-lang="de">DE</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======= SECTION COACHINGS ======= -->
+  <section class="coaching_section py-5">
+    <div class="container">
+      <div class="heading_container text-center mb-4">
+        <h2 data-i18n="coachingTitle">Nos coachings</h2>
+        <p data-i18n="coachingSubtitle">
+          Découvrez nos programmes d’accompagnement personnalisés selon vos besoins.
+        </p>
       </div>
 
-      <ul class="nav-links">
-        <li><a href="index.html" data-i18n="navHome"></a></li>
-        <li><a href="coaching.html" data-i18n="navCoaching"></a></li>
-        <li><a href="about.html" data-i18n="navAbout"></a></li>
-        <li><a href="contact.html" data-i18n="navContact"></a></li>
-        <li><a href="login.html" class="btn-login" data-i18n="navLogin"></a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section class="coaching-section">
-    <h2 data-i18n="coachingTitle">Nos coachings</h2>
-    <div id="coachings-container" class="coachings-container">
-      <!-- Les coachings seront affichés ici via JS -->
+      <!-- Conteneur dynamique alimenté par script.js -->
+      <div id="coachings-container" class="row">
+        <!-- Les coachings seront injectés ici via JS -->
+      </div>
     </div>
   </section>
 
-  <!-- Script pour récupérer les coachings depuis l'API -->
+  <!-- ======= FOOTER ======= -->
+  <section class="info_section py-4 bg-dark text-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5 data-i18n="footerLinksTitle">Liens rapides</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white">Accueil</a></li>
+            <li><a href="about.html" class="text-white">À propos</a></li>
+            <li><a href="contact.html" class="text-white">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 data-i18n="footerSubscribeTitle">Newsletter</h5>
+          <form>
+            <div class="form-row">
+              <div class="col">
+                <input class="form-control" placeholder="Entrer votre e-mail">
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-warning" type="submit">S'abonner</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact</h5>
+          <p>+01 123455678990<br/>stevemab@gmail.com</p>
+        </div>
+      </div>
+      <div class="text-center mt-3">
+        <p>&copy; <span id="displayYear"></span> PrePaDoc / StivMab Consulting. Tous droits réservés.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= SCRIPTS ======= -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
   <script src="assets/js/script.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <script>
+    $(document).ready(function(){
+      // Affichage de l’année actuelle
+      document.getElementById('displayYear').innerText = new Date().getFullYear();
+
+      // Gestion du menu de langues sur le logo
+      const logoDropdown = document.getElementById('logo-dropdown');
+      const langMenu = document.getElementById('lang-menu');
+      if (logoDropdown && langMenu) {
+        logoDropdown.addEventListener('click', (e) => {
+          e.stopPropagation();
+          logoDropdown.classList.toggle('show-menu');
+        });
+
+        langMenu.querySelectorAll('li').forEach(li => {
+          li.addEventListener('click', (ev) => {
+            const newLang = li.getAttribute('data-lang');
+            if (typeof changeLanguage === "function") {
+              changeLanguage(newLang);
+            } else {
+              localStorage.setItem('language', newLang);
+              location.reload();
+            }
+            logoDropdown.classList.remove('show-menu');
+          });
+        });
+
+        document.addEventListener('click', () => {
+          logoDropdown.classList.remove('show-menu');
+        });
+      }
+    });
+  </script>
 </body>
 </html>
