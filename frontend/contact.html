@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title data-i18n="contactPageTitle">Contact - StivMab Consulting</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome (CDN) -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Your main stylesheet -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <!-- i18next -->
+  <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
+  <script src="https://unpkg.com/i18next-browser-languagedetector@7.0.1/i18nextBrowserLanguageDetector.min.js"></script>
+  <script src="assets/js/i18next-init.js"></script>
+</head>
+
+<body>
+  <!-- ======= TOPBAR ======= -->
+  <div class="topbar py-2">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <div class="social_box">
+          <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="contact_nav d-none d-md-flex mr-3">
+          <a href="tel:+01123455678990"><i class="fa fa-phone"></i><span class="ml-1">+01 123455678990</span></a>
+          <a href="mailto:Stevemab@gmail.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">Stevemab@gmail.com</span></a>
+        </div>
+        <div class="lang_box d-flex align-items-center">
+          <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
+          <span data-i18n="langLabel">Français</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= HEADER / NAV ======= -->
+  <div class="header_bottom py-3">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a href="index.html" class="logo-link">
+          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+        </a>
+
+        <div class="nav-center">
+          <ul class="nav-links">
+            <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
+            <li><a href="coaching.html" data-i18n="navCoaching">Coaching</a></li>
+                        <li><a href="about.html" data-i18n="navAbout">À propos</a></li>
+            <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
+            <li><a href="contact.html" class="active" data-i18n="navContact">Contact</a></li>
+            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ======= HERO SECTION ======= -->
+  <section class="hero py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container text-white">
+      <h1 data-i18n="contactTitle">Nous contacter</h1>
+      <p data-i18n="contactSubtitle" style="font-size: 1.2rem; margin-top: 15px;">Nous sommes là pour répondre à vos questions et discuter de vos projets</p>
+    </div>
+  </section>
+
+  <!-- ======= CONTACT SECTION ======= -->
+  <section class="contact_section py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Contact Form -->
+        <div class="col-md-6 mb-4">
+          <h3 data-i18n="sendMessage">Envoyez-nous un message</h3>
+          <form id="contactForm" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+            <div class="form-group">
+              <label for="name" data-i18n="formName">Nom complet *</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="Votre nom" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" data-i18n="formEmail">Email *</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="votre@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone" data-i18n="formPhone">Téléphone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="+33 6 12 34 56 78">
+            </div>
+
+            <div class="form-group">
+              <label for="subject" data-i18n="formSubject">Sujet *</label>
+              <select class="form-control" id="subject" name="subject" required>
+                <option value="">-- Sélectionnez un sujet --</option>
+                <option value="coaching" data-i18n="subjectCoaching">Information sur le coaching</option>
+                <option value="formation" data-i18n="subjectFormation">Renseignements sur les formations</option>
+                <option value="investissement" data-i18n="subjectInvestment">Demande d'information sur les investissements</option>
+                <option value="autre" data-i18n="subjectOther">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" data-i18n="formMessage">Message *</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Votre message..." required></textarea>
+            </div>
+
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="acceptCGU" name="acceptCGU" required>
+              <label class="form-check-label" for="acceptCGU">
+                <span data-i18n="acceptCGU">J'accepte les conditions d'utilisation et la politique de confidentialité</span>
+                <a href="#" data-i18n="readCGU"> Lire les conditions</a>
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" data-i18n="sendBtn">Envoyer</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-6">
+          <div class="contact_info">
+            <h3 data-i18n="contactInfo">Informations de contact</h3>
+
+            <div class="row mt-4">
+              <!-- Address Card -->
+              <div class="col-md-6 mb-4">
+                <div class="info_card">
+                  <div class="info_card_icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <h5 data-i18n="address">Adresse</h5>
+                  <p>123 Avenue des Champs<br>75008 Paris, France</p>
+                </div>
+              </div>
+
+              <!-- Phone Card -->
+              <div class="col-md-6 mb-4">
+                <div class="info_card">
+                  <div class="info_card_icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <h5 data-i18n="phone">Téléphone</h5>
+                  <p>
+                    <a href="tel:+01123455678990">+01 123 455 678 990</a><br>
+                    <a href="tel:+33612345678">+33 6 12 34 56 78</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Email Card -->
+              <div class="col-md-6 mb-4">
+                <div class="info_card">
+                  <div class="info_card_icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <h5 data-i18n="email">Email</h5>
+                  <p>
+                    <a href="mailto:Stevemab@gmail.com">Stevemab@gmail.com</a><br>
+                    <a href="mailto:contact@stivmab.com">contact@stivmab.com</a>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Hours Card -->
+              <div class="col-md-6 mb-4">
+                <div class="info_card">
+                  <div class="info_card_icon">
+                    <i class="fas fa-clock"></i>
+                  </div>
+                  <h5 data-i18n="hours">Horaires</h5>
+                  <p>Lundi - Vendredi: 9h00 - 18h00<br>Samedi: 10h00 - 14h00<br>Dimanche: Fermé</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="social_connect mt-5">
+              <h5 data-i18n="followUs">Suivez-nous</h5>
+              <div class="d-flex gap-2">
+                <a href="#" class="btn btn-sm btn-primary"><i class="fab fa-facebook"></i> Facebook</a>
+                <a href="#" class="btn btn-sm btn-info"><i class="fab fa-twitter"></i> Twitter</a>
+                <a href="#" class="btn btn-sm btn-danger"><i class="fab fa-linkedin"></i> LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= MAP SECTION ======= -->
+  <section class="map_section py-5" style="background-color: #f8f9fa;">
+    <div class="container">
+      <h3 class="text-center mb-4" data-i18n="findUs">Trouvez-nous</h3>
+      <div style="width: 100%; height: 400px; background-color: #ddd; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+        <p data-i18n="mapPlaceholder">Carte Google Maps intégrée ici</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FAQ SECTION ======= -->
+  <section class="faq_section py-5">
+    <div class="container">
+      <h3 class="text-center mb-5" data-i18n="faqTitle">Questions fréquemment posées</h3>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq1Q">Quel est le délai de réponse ?</h6>
+            <p data-i18n="faq1A">Nous répondons généralement dans les 24-48 heures.</p>
+          </div>
+
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq2Q">Comment puis-je réserver une consultation ?</h6>
+            <p data-i18n="faq2A">Vous pouvez remplir le formulaire de contact ou nous appeler directement au numéro fourni.</p>
+          </div>
+
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq3Q">Y a-t-il des frais pour une première consultation ?</h6>
+            <p data-i18n="faq3A">Non, votre première consultation est totalement gratuite et sans engagement.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq4Q">Quels moyens de paiement acceptez-vous ?</h6>
+            <p data-i18n="faq4A">Nous acceptons les virements bancaires, les cartes de crédit et les portefeuilles numériques.</p>
+          </div>
+
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq5Q">Proposez-vous des services en ligne ?</h6>
+            <p data-i18n="faq5A">Oui, tous nos services peuvent être fournis en ligne via zoom, skype ou appel téléphonique.</p>
+          </div>
+
+          <div class="faq_item mb-4">
+            <h6 data-i18n="faq6Q">Comment obtenir un devis personnalisé ?</h6>
+            <p data-i18n="faq6A">Contactez-nous avec les détails de votre projet et nous vous enverrons un devis gratuit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER ======= -->
+  <footer class="py-4" style="background-color: #333; color: #fff;">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h5>StivMab Consulting</h5>
+          <p data-i18n="footerAbout">Votre partenaire pour une carrière réussie à l'étranger.</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 data-i18n="quickLinks">Liens rapides</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white" data-i18n="navHome">Accueil</a></li>
+            <li><a href="coaching.html" class="text-white" data-i18n="navCoaching">Coaching</a></li>
+            <li><a href="investissement.html" class="text-white" data-i18n="navInvestissement">Investissements</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 data-i18n="contact">Contact</h5>
+          <p>Email: <a href="mailto:Stevemab@gmail.com" class="text-white">Stevemab@gmail.com</a></p>
+          <p>Tel: <a href="tel:+01123455678990" class="text-white">+01 123 455 678 990</a></p>
+        </div>
+      </div>
+      <hr class="bg-light" />
+      <p class="text-center mb-0">&copy; 2024 StivMab Consulting. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Handle form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        subject: document.getElementById('subject').value,
+        message: document.getElementById('message').value
+      };
+
+      console.log('Form submitted:', formData);
+      alert('Merci ! Votre message a été envoyé. Nous vous répondrons dans les 24-48 heures.');
+      this.reset();
+    });
+  </script>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,56 +1,91 @@
 /* ============================
    STYLES GLOBAUX
+   Principes HCI appliqués :
+   1. Visibilité : contraste WCAG AA minimum (4.5:1)
+   2. Correspondance : langue claire et feedback explicites
+   3. Liberté utilisateur : navigation claire, annulation possible
+   4. Cohérence : styles uniformes partout
+   5. Prévention erreurs : validation visible
+   6. Reconnaissance : boutons clairs (visuellement distincts)
+   7. Flexibilité : responsive, accessible clavier
 ============================ */
 body {
   margin: 0;
   font-family: 'Roboto', Arial, sans-serif;
-  background-color: #1E3A5F;
-  color: white;
+  background-color: #0f2a44;
+  color: #ffffff;
+  line-height: 1.6;
+  font-size: 16px;
 }
 
 a {
   text-decoration: none;
-  color: inherit;
-  transition: 0.3s;
+  color: #FFD700;
+  transition: all 0.3s ease;
+  outline: none;
 }
 
-a:hover {
-  color: #FFD700;
+a:hover, a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: 2px solid #FFD700;
+}
+
+/* Accessibilité : focus visible pour clavier */
+a:focus-visible {
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
 }
 
 /* ============================
-   TOPBAR
+   TOPBAR - Haute visibilité
 ============================ */
 .topbar {
-  background-color: #1c2f4f;
+  background-color: #0a1f34;
   border-bottom: 2px solid #FFD700;
-  font-size: 14px;
-  color: #fff;
+  font-size: 15px;
+  color: #ffffff;
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .topbar a {
   color: #FFD700;
-  font-weight: 500;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
 }
 
-.topbar a:hover {
-  color: white;
+.topbar a:hover, .topbar a:focus {
+  color: #ffffff;
+  background-color: rgba(255, 215, 0, 0.1);
+  text-decoration: none;
 }
 
 .social_box a {
   color: #FFD700;
+  font-size: 18px;
+  display: inline-block;
+  padding: 8px;
+  border-radius: 4px;
 }
 
-.social_box a:hover {
-  color: white;
+.social_box a:hover, .social_box a:focus {
+  color: #ffffff;
+  background-color: rgba(255, 215, 0, 0.15);
 }
 
 /* ============================
-   HEADER / NAVIGATION
+   HEADER / NAVIGATION - Cohérence & Liberté
 ============================ */
 .header_bottom {
-  background-color: #1E3A5F;
+  background-color: #0f2a44;
   border-bottom: 3px solid #FFD700;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .navbar {
@@ -58,34 +93,53 @@ a:hover {
   align-items: center;
   justify-content: center;
   position: relative;
+  min-height: 80px;
 }
 
-/* Liens de navigation */
+/* Liens de navigation - Visibilité maximale */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .nav-links a {
   color: #FFD700;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 16px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.25s ease;
+  display: block;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
-.nav-links a:hover {
-  color: white;
+.nav-links a:hover, .nav-links a:focus {
+  color: #ffffff;
+  background-color: rgba(255, 215, 0, 0.15);
+  text-decoration: none;
+  outline: 2px solid #FFD700;
 }
 
-/* Logo à gauche */
+.nav-links a.active {
+  background-color: rgba(255, 215, 0, 0.2);
+  border-bottom: 3px solid #FFD700;
+}
+
+/* Logo à gauche - Reconnaissance & Feedback */
 .logo-dropdown {
   position: absolute;
   left: 40px;
   display: flex;
   align-items: center;
   cursor: pointer;
+  gap: 12px;
 }
 
 .logo-dropdown img {
@@ -93,42 +147,70 @@ a:hover {
   width: 65px;
   display: block;
   border-radius: 50%;
-  border: 2px solid #FFD700;
+  border: 3px solid #FFD700;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
 }
 
-.logo-dropdown img:hover {
-  transform: scale(1.05);
+.logo-dropdown img:hover, .logo-dropdown img:focus {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  outline: 2px solid #FFD700;
 }
 
-/* Menu langues déroulant */
+/* Style pour le lien logo (remplace logo-dropdown quand utilisé) */
+.logo-link img {
+  height: 65px;
+  width: 65px;
+  display: block;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  object-fit: cover;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+}
+
+.logo-link img:hover, .logo-link img:focus {
+  transform: scale(1.08);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  outline: 2px solid #FFD700;
+}
+
+/* Menu langues déroulant - Feedback clair */
 .lang-menu {
   display: none;
   position: absolute;
-  top: 70px;
+  top: 85px;
   left: 0;
   background-color: #FFD700;
   border-radius: 8px;
   list-style: none;
-  padding: 5px 0;
+  padding: 8px 0;
   margin: 0;
-  min-width: 100px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  min-width: 120px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
   z-index: 1000;
 }
 
 .lang-menu li {
-  padding: 8px 12px;
+  padding: 12px 16px;
   text-align: center;
   cursor: pointer;
-  color: #1E3A5F;
-  font-weight: 600;
+  color: #0f2a44;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lang-menu li:hover {
-  background-color: #1E3A5F;
+.lang-menu li:hover, .lang-menu li:focus {
+  background-color: #0f2a44;
   color: #FFD700;
+  outline: 2px solid #0f2a44;
 }
 
 /* Affiche le menu quand on clique */
@@ -136,110 +218,238 @@ a:hover {
   display: block;
 }
 
-/* Bouton de connexion */
-.btn-login {
-  background-color: white;
-  color: #1E3A5F;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-weight: 700;
-  transition: all 0.3s ease;
+/* Positionner le logo à gauche (dans la navbar) */
+.navbar {
+  position: relative;
 }
 
-.btn-login:hover {
+.logo-link {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  z-index: 50;
+}
+
+.logo-link img {
+  height: 65px;
+  width: 65px;
+  border-radius: 50%;
+  border: 3px solid #FFD700;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.logo-link img:hover,
+.logo-link img:focus {
+  transform: translateY(-50%) scale(1.08);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+  outline: 2px solid #FFD700;
+}
+
+/* Décaler la barre de navigation centrée pour éviter recouvrement */
+.nav-center {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+@media (min-width: 992px) {
+  .nav-center {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+/* Bouton de connexion - Reconnaissance visuelle */
+.btn-login {
+  background-color: #ffffff;
+  color: #0f2a44;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 2px solid #ffffff;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-login:hover, .btn-login:focus {
   background-color: #FFD700;
-  color: #1E3A5F;
+  color: #0f2a44;
+  border-color: #0f2a44;
+  text-decoration: none;
+  outline: 2px solid #0f2a44;
 }
 
 /* ============================
-   SECTION HERO
+   SECTION HERO - Visibilité & Correspondance
 ============================ */
 .hero {
   text-align: center;
-  padding: 100px 20px;
-  background: linear-gradient(to bottom, #1E3A5F 0%, #122541 100%);
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0f2a44 0%, #051628 100%);
+  color: #ffffff;
 }
 
 .hero h1 {
-  font-size: 40px;
+  font-size: 48px;
   font-weight: 900;
   margin-bottom: 15px;
+  color: #ffffff;
+  line-height: 1.2;
 }
 
 .hero h1 span {
   color: #FFD700;
+  display: block;
+  font-size: 52px;
 }
 
 .hero p {
-  font-size: 18px;
-  color: #ddd;
-  max-width: 700px;
+  font-size: 20px;
+  color: #e8f0f8;
+  max-width: 800px;
   margin: 0 auto 30px;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 .btn-primary-custom {
   background-color: #FFD700;
-  color: #1E3A5F;
-  padding: 10px 20px;
+  color: #0f2a44;
+  padding: 14px 28px;
   border-radius: 8px;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 16px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 2px solid #FFD700;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
 }
 
-.btn-primary-custom:hover {
-  background-color: white;
-  color: #1E3A5F;
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+  background-color: #ffffff;
+  color: #0f2a44;
+  border-color: #ffffff;
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
 }
 
 /* ============================
-   SECTION SERVICES
+   SECTION SERVICES - Cohérence & Reconnaissance
 ============================ */
 .service_section {
-  background-color: #1E3A5F;
+  background-color: #0f2a44;
+  padding: 60px 20px;
 }
 
 .service_section h2 {
   color: #FFD700;
-  font-weight: 700;
-  margin-bottom: 20px;
+  font-weight: 900;
+  margin-bottom: 30px;
+  font-size: 36px;
+  text-align: center;
 }
 
 .service_section p {
-  color: #ddd;
+  color: #e8f0f8;
+  line-height: 1.8;
 }
 
 .box {
-  background-color: #1c2f4f;
-  border: 2px solid #FFD700;
-  border-radius: 10px;
-  transition: transform 0.3s;
+  background-color: #1a3f5a;
+  border: 3px solid #FFD700;
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-.box:hover {
-  transform: scale(1.05);
+.box:hover, .box:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(255, 215, 0, 0.2);
+  border-color: #ffffff;
+}
+
+.box h3 {
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.box p {
+  color: #e8f0f8;
 }
 
 /* ============================
-   SECTION ABOUT
+   SECTION ABOUT PREVIEW
 ============================ */
-.about_section {
-  background-color: #1c2f4f;
+.about-preview {
+  background-color: #f5f7fa;
+  padding: 80px 20px;
 }
 
-.about_section h2 {
-  color: #FFD700;
-  margin-bottom: 20px;
-  font-weight: 700;
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.about_section p {
-  color: #ddd;
+.section-title h2 {
+  color: #0f2a44;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  color: #555555;
+  font-size: 18px;
   line-height: 1.6;
 }
 
+.about-text h3 {
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: #e8f0f8;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-image {
+  background: linear-gradient(135deg, #FFD700 0%, #ffa500 100%);
+  height: 350px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f2a44;
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.about-image i {
+  color: rgba(15,42,68,0.3) !important;
+}
+
 /* ============================
-   SECTION PROJECTS
+   SECTION PROJECTS & PILLAR CARDS
 ============================ */
 .project_section h2 {
   color: #FFD700;
@@ -247,100 +457,912 @@ a:hover {
 }
 
 .project_section .box {
-  background-color: #1c2f4f;
+  background-color: #1a3f5a;
   border: 2px solid #FFD700;
   border-radius: 10px;
 }
 
-/* ============================
-   SECTION TESTIMONIALS
-============================ */
-.client_section {
-  background-color: #f9f9f9;
-  color: #1E3A5F;
+/* Pillar Cards - Pages d'accueil */
+.pillar-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  border: 3px solid #FFD700;
+  transition: all 0.3s ease;
+  min-height: 100%;
 }
 
-.client_section h2 {
-  color: #1E3A5F;
+.pillar-card:hover, .pillar-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  border-color: #0f2a44;
+}
+
+.pillar-icon {
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #FFD700;
+  text-align: center;
+}
+
+.pillar-card h3 {
+  color: #0f2a44;
+  font-weight: 800;
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.pillar-card p {
+  color: #333333;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.pillar-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pillar-card li {
+  color: #0f2a44;
+  padding: 8px 0;
+  padding-left: 28px;
+  position: relative;
+  font-weight: 600;
+}
+
+.pillar-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #FFD700;
+  font-weight: 800;
 }
 
 /* ============================
-   SECTION CONTACT
+   TESTIMONIALS SECTION - Styles génériques
 ============================ */
-.contact_section h2 {
+.testimonials {
+  background-color: #0f2a44;
+  padding: 80px 20px;
+}
+
+.testimonials .section-title h2,
+.testimonials .section-title p {
+  color: #ffffff;
+}
+
+.testimonials .section-title p {
+  color: #e8f0f8;
+}
+
+.testimonial-card {
+  background-color: #1a3f5a;
+  border-radius: 12px;
+  padding: 30px;
+  border: 2px solid #FFD700;
+  transition: all 0.3s ease;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card:hover, .testimonial-card:focus {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2);
+  border-color: #ffffff;
+}
+
+.testimonial-card p {
+  color: #e8f0f8;
+  font-style: italic;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.testimonial-author {
   color: #FFD700;
   font-weight: 700;
+  font-size: 14px;
+}
+
+/* .mt-2 etc. Bootstrap utility classes remain usable */
+
+/* Owl carousel dots / navigation (si utilisés) */
+.owl-dots {
+  margin-top: 18px;
+  text-align: center;
+}
+
+.owl-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #d6d6d6;
+  border-radius: 50%;
+  margin: 0 6px;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+  background: #FFD700;
+  transform: scale(1.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .client_section .item {
+    padding: 22px 14px;
+    min-height: auto;
+  }
+  .client_section .item img {
+    width: 70px;
+    height: 70px;
+  }
+  #testimonialsCarousel {
+    padding: 0 12px;
+  }
+}
+
+
+/* ============================
+   CTA SECTION - Appel à l'action
+============================ */
+.cta-section {
+  background: linear-gradient(135deg, #FFD700 0%, #ffa500 100%);
+  color: #0f2a44;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.cta-section h2 {
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  color: #0f2a44;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #051628;
+  line-height: 1.6;
+}
+
+.cta-section .btn {
+  background-color: #0f2a44;
+  color: #FFD700;
+  border: 3px solid #0f2a44;
+  font-weight: 800;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: 8px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.cta-section .btn:hover, .cta-section .btn:focus {
+  background-color: #051628;
+  color: #FFD700;
+  border-color: #051628;
+  transform: translateY(-2px);
+  text-decoration: none;
 }
 
 .contact_section .form-control {
-  border-radius: 6px;
-  border: 1px solid #FFD700;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  padding: 12px 16px;
+  font-size: 16px;
+  background-color: #1a3f5a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  min-height: 44px;
+}
+
+.contact_section .form-control::placeholder {
+  color: #b0c4de;
+}
+
+.contact_section .form-control:focus {
+  background-color: #1a3f5a;
+  border-color: #ffffff;
+  color: #ffffff;
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+}
+
+.contact_section label {
+  color: #FFD700;
+  font-weight: 700;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .contact_section button {
   background-color: #FFD700;
-  color: #1E3A5F;
-  font-weight: bold;
+  color: #0f2a44;
+  font-weight: 900;
   border-radius: 8px;
-  border: none;
-  padding: 10px 20px;
+  border: 2px solid #FFD700;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  min-width: 150px;
 }
 
-.contact_section button:hover {
-  background-color: white;
+.contact_section button:hover, .contact_section button:focus {
+  background-color: #ffffff;
+  border-color: #0f2a44;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(255, 215, 0, 0.3);
 }
 
 /* ============================
-   FOOTER
+   FOOTER - Cohérence complète
 ============================ */
 .info_section {
-  background-color: #122541;
-  border-top: 2px solid #FFD700;
-  color: white;
+  background-color: #051628;
+  border-top: 3px solid #FFD700;
+  color: #ffffff;
+  padding: 60px 20px 30px;
 }
 
 .info_section h5 {
   color: #FFD700;
   margin-bottom: 15px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.info_section p {
+  color: #e8f0f8;
+  line-height: 1.8;
+  margin-bottom: 12px;
 }
 
 .info_section a {
   color: #FFD700;
+  font-weight: 600;
+  transition: all 0.2s ease;
 }
 
-.info_section a:hover {
-  color: white;
+.info_section a:hover, .info_section a:focus {
+  color: #ffffff;
+  text-decoration: underline;
 }
 
 /* ============================
-   RESPONSIVE
+   THEME OVERRIDES (Bleu foncé & Or)
+   Appended to ensure theme applies even if theme.css is not loaded
 ============================ */
+/* ============================
+   RESPONSIVE & ACCESSIBILITÉ
+============================ */
+/* Formations Section - Lisibilité des cartes */
+.formations_section {
+  background-color: #0f2a44;
+  padding: 60px 20px;
+}
+
+.formations_section .heading_container h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.formations_section .heading_container p {
+  color: #e8f0f8;
+  font-size: 18px;
+}
+
+.formations_section .card {
+  background-color: #1a3f5a !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.formations_section .card:hover {
+  transform: translateY(-8px);
+  border-color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2) !important;
+}
+
+.formations_section .card-title {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.formations_section .card-text {
+  color: #e8f0f8 !important;
+  line-height: 1.8 !important;
+  font-size: 14px !important;
+}
+
+.formations_section .list-unstyled li {
+  color: #e8f0f8 !important;
+  padding: 6px 0 !important;
+}
+
+/* ============================
+   SECTION SEPARATIONS - Amélioration visuelle
+============================ */
+
+/* Pillar Cards avec bordure supérieure */
+.pillar-card {
+  border-top: 5px solid #FFD700;
+  padding-top: 30px;
+  transition: all 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.15);
+}
+
+/* About Preview - Délimiteurs visuels */
+.about-preview {
+  background-color: transparent;
+  padding: 60px 20px;
+  margin: 60px 0;
+  border-top: 4px solid #FFD700;
+  border-bottom: 4px solid #FFD700;
+}
+
+.about-preview .section-title h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.about-preview .section-title p {
+  color: #e8f0f8;
+  font-size: 18px;
+}
+
+/* Testimonials Section */
+.testimonials {
+  background-color: #1a3f5a;
+  padding: 80px 20px;
+  margin: 60px 0;
+  border-top: 4px solid #FFD700;
+  border-bottom: 4px solid #FFD700;
+}
+
+.testimonials .section-title h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.testimonials .section-title p {
+  color: #e8f0f8;
+  font-size: 18px;
+}
+
+.testimonial-card {
+  background-color: rgba(255, 215, 0, 0.05);
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 30px 25px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(255, 215, 0, 0.15);
+  border-color: #ffffff;
+}
+
+.testimonial-card p {
+  color: #e8f0f8;
+  font-size: 15px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.testimonial-author {
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* CTA Sections avec séparation */
+.cta-section {
+  background: linear-gradient(135deg, #FFD700 0%, #ffa500 100%);
+  padding: 80px 20px;
+  margin: 60px 0;
+  text-align: center;
+  border-top: 4px solid #0f2a44;
+  border-bottom: 4px solid #0f2a44;
+}
+
+.cta-section h3 {
+  color: #0f2a44;
+  font-weight: 900;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.cta-section p {
+  color: #051628;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.cta-section .btn {
+  background-color: #0f2a44;
+  color: #FFD700;
+  border: 3px solid #0f2a44;
+  font-weight: 800;
+  padding: 12px 32px;
+  font-size: 16px;
+  min-height: 48px;
+}
+
+.cta-section .btn:hover {
+  background-color: #051628;
+  color: #FFD700;
+  text-decoration: none;
+}
+
+/* Section Title styling universal */
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  color: #e8f0f8;
+  font-size: 18px;
+}.formations_section .list-unstyled li i {
+  color: #FFD700 !important;
+  margin-right: 8px !important;
+}
+
+.formations_section .btn {
+  background-color: #FFD700 !important;
+  color: #0f2a44 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 700 !important;
+}
+
+/* Coaching Section - Vidéos responsive */
+.coaching_section {
+  background-color: #0f2a44;
+  padding: 60px 20px;
+}
+
+.coaching_section h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.coaching_section .card {
+  background-color: #1a3f5a !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.coaching_section .card:hover {
+  transform: translateY(-8px);
+  border-color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2) !important;
+}
+
+.coaching_section iframe {
+  width: 100%;
+  height: 250px;
+  display: block;
+  border: none;
+}
+
+.coaching_section .card-body {
+  background-color: #1a3f5a !important;
+}
+
+.coaching_section .card-title {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.coaching_section .card-text {
+  color: #e8f0f8 !important;
+  font-size: 14px !important;
+}
+
+/* Improve contrast for coaching service descriptions */
+.coaching_section .card p,
+.coaching_section .card li p,
+.coaching_section .card ul li {
+  color: #e8f0f8 !important;
+}
+
+.coaching_section .card strong,
+.coaching_section .card h5,
+.coaching_section .card .card-title {
+  color: #FFD700 !important;
+}
+
+.coaching_section .service-card p,
+.coaching_section .service-card h4 {
+  color: #e8f0f8 !important;
+}
+
+.coaching_section .service-card i {
+  color: #FFD700 !important;
+}
+
+/* Investment Section - Programmes d'investissement */
+.investments_section {
+  background-color: #0f2a44;
+  padding: 60px 20px;
+}
+
+.investments_section .heading_container h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.investments_section .heading_container p {
+  color: #e8f0f8;
+  font-size: 18px;
+}
+
+.investments_section .card {
+  background-color: #1a3f5a !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 12px !important;
+  border-left: 5px solid #FFD700 !important;
+  transition: all 0.3s ease;
+}
+
+.investments_section .card:hover {
+  transform: translateY(-8px);
+  border-color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2) !important;
+}
+
+.investments_section .card-title {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.investments_section .card-text {
+  color: #e8f0f8 !important;
+  line-height: 1.8 !important;
+  font-size: 14px !important;
+}
+
+/* Info Cards - Contact Section */
+.info_card {
+  background-color: #1a3f5a;
+  border: 2px solid #FFD700;
+  border-radius: 12px;
+  padding: 24px 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info_card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2);
+  border-color: #ffffff;
+}
+
+.info_card_icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 215, 0, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  color: #FFD700;
+}
+
+.info_card h5 {
+  color: #FFD700;
+  font-weight: 800;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.info_card p {
+  color: #e8f0f8;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.info_card a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.info_card a:hover,
+.info_card a:focus {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.investments_section .card-body > div {
+  background-color: #0f2a44 !important;
+  color: #e8f0f8 !important;
+}
+
+.investments_section .card-body > div p {
+  color: #e8f0f8 !important;
+}
+
+.investments_section .btn {
+  background-color: #FFD700 !important;
+  color: #0f2a44 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 700 !important;
+}
+
+/* Why Invest Section */
+.why_invest_section {
+  background-color: #0f2a44 !important;
+  padding: 60px 20px !important;
+}
+
+.why_invest_section h2 {
+  color: #FFD700 !important;
+  font-weight: 900 !important;
+  font-size: 36px !important;
+  margin-bottom: 30px !important;
+}
+
+.why_invest_section h5 {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+  margin-bottom: 12px !important;
+}
+
+.why_invest_section p {
+  color: #e8f0f8 !important;
+  line-height: 1.8 !important;
+  font-size: 15px !important;
+}
+
+.why_invest_section i {
+  color: #FFD700 !important;
+}
+
+/* CTA Section - Formation et Investissement */
+.cta_section {
+  background: linear-gradient(135deg, #FFD700 0%, #ffa500 100%) !important;
+  padding: 60px 20px !important;
+}
+
+.cta_section h3 {
+  color: #0f2a44 !important;
+  font-weight: 900 !important;
+  font-size: 32px !important;
+  margin-bottom: 15px !important;
+}
+
+.cta_section p {
+  color: #051628 !important;
+  font-size: 16px !important;
+  line-height: 1.6 !important;
+}
+
+.cta_section .btn {
+  background-color: #0f2a44 !important;
+  color: #FFD700 !important;
+  border: 3px solid #0f2a44 !important;
+  font-weight: 800 !important;
+  padding: 12px 32px !important;
+  font-size: 16px !important;
+  min-height: 48px !important;
+}
+
+.cta_section .btn:hover {
+  background-color: #051628 !important;
+  color: #FFD700 !important;
+  text-decoration: none !important;
+}
+
+/* Checkbox CGU styling */
+.form-check-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 2px solid #FFD700 !important;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: #FFD700 !important;
+  border-color: #FFD700 !important;
+}
+
+.form-check-input:focus {
+  outline: 3px solid #FFD700;
+  outline-offset: 2px;
+}
+
+.form-check-label {
+  color: #e8f0f8;
+  font-size: 15px;
+  margin-bottom: 0;
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.form-check-label a {
+  color: #FFD700;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Investissement Section - Même style que formations */
+.investissement_section {
+  background-color: #0f2a44;
+  padding: 60px 20px;
+}
+
+.investissement_section .heading_container h2 {
+  color: #FFD700;
+  font-weight: 900;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.investissement_section .heading_container p {
+  color: #e8f0f8;
+  font-size: 18px;
+}
+
+.investissement_section .card {
+  background-color: #1a3f5a !important;
+  border: 2px solid #FFD700 !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease;
+}
+
+.investissement_section .card:hover {
+  transform: translateY(-8px);
+  border-color: #ffffff !important;
+  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2) !important;
+}
+
+.investissement_section .card-title {
+  color: #FFD700 !important;
+  font-weight: 800 !important;
+  font-size: 18px !important;
+}
+
+.investissement_section .card-text {
+  color: #e8f0f8 !important;
+  line-height: 1.8 !important;
+  font-size: 14px !important;
+}
+
+.investissement_section .list-unstyled li {
+  color: #e8f0f8 !important;
+  padding: 6px 0 !important;
+}
+
+.investissement_section .list-unstyled li i {
+  color: #FFD700 !important;
+  margin-right: 8px !important;
+}
+
+.investissement_section .btn {
+  background-color: #FFD700 !important;
+  color: #0f2a44 !important;
+  border: 2px solid #FFD700 !important;
+  font-weight: 700 !important;
+}
 @media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
   .navbar {
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
+    min-height: auto;
   }
 
   .logo-dropdown {
     position: relative;
     left: 0;
     margin-bottom: 10px;
+    order: -1;
   }
 
   .nav-links {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .hero {
-    padding: 60px 15px;
+    padding: 80px 15px;
   }
 
   .hero h1 {
-    font-size: 30px;
+    font-size: 36px;
+  }
+
+  .hero h1 span {
+    font-size: 40px;
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 18px;
+  }
+
+  .contact_section .form-control,
+  .contact_section button {
+    min-width: 100%;
+  }
+}
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .logo-dropdown {
+    left: 20px;
+  }
+}
+
+/* Écrans très larges */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
   }
 }

@@ -1,0 +1,71 @@
+/* Theme: Bleu foncé & Or - central theme variables and base utilities */
+:root {
+  --stiv-primary: #0f2a44; /* deep navy */
+  --stiv-primary-2: #122541; /* darker gradient */
+  --stiv-card: #1c2f4f; /* card background */
+  --stiv-accent: #FFD700; /* gold */
+  --stiv-bg: #0b2238; /* page background */
+  --stiv-text: #f5f7fa; /* main text */
+  --stiv-muted: #c9d6e3;
+  --stiv-border: rgba(255,215,0,0.15);
+}
+
+/* Strong base rules to apply the theme consistently */
+html, body {
+  background-color: var(--stiv-bg);
+  color: var(--stiv-text);
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+a { color: var(--stiv-accent); }
+a:hover { color: #fff; }
+
+/* Topbar / Header overrides */
+.topbar { background-color: var(--stiv-primary-2); border-bottom: 2px solid var(--stiv-accent); }
+.topbar, .topbar a { color: var(--stiv-text); }
+
+.header_bottom { background-color: var(--stiv-primary); border-bottom: 3px solid var(--stiv-accent); }
+
+.logo-dropdown img { border: 2px solid var(--stiv-accent); }
+
+.lang-menu { background-color: var(--stiv-accent); }
+.lang-menu li { color: var(--stiv-primary); }
+
+.btn-login { background-color: #fff; color: var(--stiv-primary); }
+.btn-login:hover { background-color: var(--stiv-accent); color: var(--stiv-primary); }
+
+/* Hero */
+.hero { background: linear-gradient(180deg, var(--stiv-primary) 0%, var(--stiv-primary-2) 100%); }
+.hero h1 span { color: var(--stiv-accent); }
+.hero p { color: var(--stiv-muted); }
+
+.btn-primary-custom { background-color: var(--stiv-accent); color: var(--stiv-primary); }
+.btn-primary-custom:hover { background-color: #fff; color: var(--stiv-primary); }
+
+/* Services / cards */
+.box { background-color: var(--stiv-card); border: 2px solid var(--stiv-accent); }
+.service_section h2, .about_section h2, .project_section h2, .contact_section h2 { color: var(--stiv-accent); }
+
+/* Clients / testimonials */
+.client_section { background-color: #f7f8fa; color: var(--stiv-primary); }
+.client_section .item { background: #fff; border: 2px solid rgba(17, 34, 51, 0.04); }
+.client_section .item img { border: 3px solid var(--stiv-accent); }
+
+/* Footer */
+.info_section { background-color: #071523; border-top: 2px solid var(--stiv-accent); }
+
+/* Forms */
+.contact_section .form-control { border: 1px solid var(--stiv-accent); color: var(--stiv-text); background-color: rgba(255,255,255,0.02); }
+.contact_section button { background-color: var(--stiv-accent); color: var(--stiv-primary); }
+
+/* Utilities */
+.muted { color: var(--stiv-muted); }
+
+/* Ensure good contrast for accessibility */
+:root {
+  --stiv-accent-contrast: #1E3A5F;
+}
+
+/* Final safety: apply accent to common selectors */
+.btn, .btn-primary, .nav-links a, .topbar a { color: var(--stiv-accent) !important; }
+.btn-primary, .btn-primary-custom { background: var(--stiv-accent) !important; color: var(--stiv-primary) !important; }

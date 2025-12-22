@@ -29,20 +29,22 @@
   <div class="topbar py-2">
     <div class="container d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center">
-        <div class="lang_box mr-3 d-flex align-items-center">
-          <img src="assets/images/flag-fr.png" alt="flag" style="height:18px; margin-right:8px;">
-          <span data-i18n="langLabel">Français</span>
+        <div class="social_box">
+          <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="contact_nav d-none d-md-flex">
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="contact_nav d-none d-md-flex mr-3">
           <a href="tel:+01123455678990"><i class="fa fa-phone"></i><span class="ml-1">+01 123455678990</span></a>
           <a href="mailto:Stevemab@gmail.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">Stevemab@gmail.com</span></a>
         </div>
-      </div>
-      <div class="social_box">
-        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-        <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
-        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+        <div class="lang_box d-flex align-items-center">
+          <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
+          <span data-i18n="langLabel">Français</span>
+        </div>
       </div>
     </div>
   </div>
@@ -51,25 +53,18 @@
   <div class="header_bottom py-3">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <!-- centered nav links -->
+        <a href="index.html" class="logo-link">
+          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+        </a>
+
         <div class="nav-center">
           <ul class="nav-links">
             <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
             <li><a href="coaching.html" class="active" data-i18n="navCoaching">Coaching</a></li>
-            <li><a href="about.html" data-i18n="navFormation">Formation</a></li>
+Produits pour te développer et construire ta vie sociale, professionnelle et entrepreneuriale             <li><a href="about.html" data-i18n="navAbout">À propos</a></li>
             <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
             <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Connexion</a></li>
-          </ul>
-        </div>
-
-        <!-- logo à droite avec menu langue -->
-        <div class="logo-dropdown" id="logo-dropdown">
-          <img id="logo" src="assets/images/logo.jpg" alt="Logo">
-          <ul id="lang-menu" class="lang-menu">
-            <li data-lang="fr">FR</li>
-            <li data-lang="en">EN</li>
-            <li data-lang="de">DE</li>
+            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
           </ul>
         </div>
       </nav>
@@ -79,19 +74,226 @@
   <!-- ======= SECTION COACHINGS ======= -->
   <section class="coaching_section py-5">
     <div class="container">
-      <div class="heading_container text-center mb-4">
-        <h2 data-i18n="coachingTitle">Nos coachings</h2>
-        <p data-i18n="coachingSubtitle">
-          Découvrez nos programmes d’accompagnement personnalisés selon vos besoins.
+        <div class="heading_container text-center mb-4">
+        <h2 style="color: #0f2a44;">Mes Services de Coaching et Accompagnement</h2>
+        <p style="color: #ffffff; font-size: 1.1rem; max-width: 800px; margin: 20px auto;">
+          Produits pour te développer et construire ta vie sociale, professionnelle et entrepreneuriale
+        </p>
+        <!-- Phrase accrocheuse -->
+        <p class="font-weight-bold text-primary" style="font-size:1.2rem; margin-top:10px;">
+          Essayez votre première séance gratuitement ! Aucun risque, commencez dès maintenant.
         </p>
       </div>
 
-      <!-- Conteneur dynamique alimenté par script.js -->
-      <div id="coachings-container" class="row">
-        <!-- Les coachings seront injectés ici via JS -->
+      <!-- IMMIGRATION SERVICES -->
+      <div class="row mb-5">
+        <div class="col-lg-4 mb-3">
+          <div class="service-card" style="background: linear-gradient(135deg, #0f2a44 0%, #1a3f5a 100%); padding: 30px; border-radius: 8px; color: white; text-align: center; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+            <i class="fas fa-passport" style="font-size: 3rem; color: #FFD700; margin-bottom: 15px;"></i>
+            <h4 style="color: #FFD700; margin-bottom: 15px;">Service Immigration</h4>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+              Accompagnement complet pour naviguer les processus d'immigration en Allemagne
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card" style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 30px;">
+            <ul style="list-style: none; padding: 0;">
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">📋 Visa & Procédures administratives</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Guidance complète pour obtenir votre visa d'étudiant, travail ou famille</p>
+              </li>
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">🎓 Formation & Études</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Support pour l'inscription aux universités et formation en Allemagne</p>
+              </li>
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">💼 Permis de travail</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Assistance pour trouver et sécuriser un emploi avec autorisation de travail</p>
+              </li>
+              <li style="padding: 12px 0;">
+                <strong style="color: #FFD700">👨‍👩‍👧‍👦 Regroupement familial</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Aide pour faire venir vos proches en Allemagne légalement</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- INTEGRATION SERVICES -->
+      <div class="row mb-5">
+        <div class="col-lg-8 order-lg-2">
+          <div class="card" style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 30px;">
+            <ul style="list-style: none; padding: 0;">
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">🗣️ Cours d'allemand & culture</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Conseils pratiques pour maîtriser l'allemand et comprendre la culture locale</p>
+              </li>
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">🏛️ Système et administratif</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Explication du système allemand (impôts, santé, retraite, banque)</p>
+              </li>
+              <li style="padding: 12px 0; border-bottom: 1px solid #eee;">
+                <strong style="color: #FFD700">🤝 Réseautage & connexions</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Aide à créer un réseau professionnel et social en Allemagne</p>
+              </li>
+              <li style="padding: 12px 0;">
+                <strong style="color: #FFD700">🏘️ Vie quotidienne</strong>
+                <p style="color: #ffffff; margin: 8px 0 0 0;">Support pour trouver logement, transports et services essentiels</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-4 order-lg-1 mb-3">
+          <div class="service-card" style="background: linear-gradient(135deg, #1a3f5a 0%, #0f2a44 100%); padding: 30px; border-radius: 8px; color: white; text-align: center; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+            <i class="fas fa-globe" style="font-size: 3rem; color: #FFD700; margin-bottom: 15px;"></i>
+            <h4 style="color: #FFD700; margin-bottom: 15px;">Service Intégration</h4>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+              Accompagnement pour réussir votre intégration sociale et professionnelle
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUSINESS SERVICES -->
+      <div class="row mb-5">
+        <div class="col-lg-4 mb-3">
+          <div class="service-card" style="background: linear-gradient(135deg, #0f2a44 0%, #051628 100%); padding: 30px; border-radius: 8px; color: white; text-align: center; min-height: 250px; display: flex; flex-direction: column; justify-content: center;">
+            <i class="fas fa-chart-line" style="font-size: 3rem; color: #FFD700; margin-bottom: 15px;"></i>
+            <h4 style="color: #FFD700; margin-bottom: 15px;">Service Business</h4>
+            <p style="font-size: 0.95rem; line-height: 1.6;">
+              Stratégie d'investissement et développement entrepreneurial en Allemagne
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card" style="border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 30px;">
+            <h5 style="color: #FFD700; margin-bottom: 20px;">Immobilier</h5>
+            <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Formations immobilières complètes</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Coaching personnalisé en investissement</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Conseils d'acquisition stratégique</li>
+            </ul>
+            
+            <h5 style="color: #FFD700; margin-bottom: 20px;">Marché boursier & Investissements</h5>
+            <ul style="list-style: none; padding: 0; margin-bottom: 25px;">
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Formations bourse & crypto</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Coaching en stratégie d'investissement</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Gestion de portefeuille</li>
+            </ul>
+
+            <h5 style="color: #FFD700; margin-bottom: 20px;">Entrepreneuriat & Création d'entreprise</h5>
+            <ul style="list-style: none; padding: 0;">
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Stratégie entrepreneuriale en Allemagne</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Coaching pour startups</li>
+              <li style="padding: 8px 0;"><i class="fas fa-check" style="color: #FFD700; margin-right: 10px;"></i> Financement & levée de fonds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bouton réservation -->
+      <div class="text-center mt-5">
+        <button class="btn btn-lg" style="background-color: #0f2a44; color: #FFD700; border: 2px solid #FFD700; font-weight: bold; padding: 12px 40px;" data-toggle="modal" data-target="#reservationModal">
+          Réserver ma séance gratuite
+        </button>
       </div>
     </div>
   </section>
+
+<!-- ======= MODAL RESERVATION ======= -->
+<div class="modal fade" id="reservationModal" tabindex="-1" role="dialog" aria-labelledby="reservationModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title w-100 text-center" id="reservationModalLabel" style="color: #C7EA46;">Réserver votre séance gratuite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fermer">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form id="reservationForm">
+          <div class="form-group">
+            <label for="nom" style="color: #C7EA46;">Nom <span style="color:red">*</span></label>
+            <input type="text" class="form-control" id="nom" placeholder="Votre nom" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" style="color: #C7EA46;">Email <span style="color:red">*</span></label>
+            <input type="email" class="form-control" id="email" placeholder="Votre email" required>
+          </div>
+
+          <div class="form-group">
+            <label style="color: #C7EA46;">Numéro de téléphone <span style="color:red">*</span></label>
+            <div class="d-flex">
+              <select id="indicatif" class="form-control mr-2" style="max-width: 120px; color:#C7EA46;" required>
+                <option value="+33" data-placeholder="Ex: 06 12 34 56 78">🇫🇷 +33</option>
+                <option value="+237" data-placeholder="Ex: 6 12 34 56 78">🇨🇲 +237</option>
+                <option value="+49" data-placeholder="Ex: 0151 2345678">🇩🇪 +49</option>
+              </select>
+              <input type="tel" class="form-control" id="tel" placeholder="Ex: 06 12 34 56 78" required>
+            </div>
+            <small class="form-text text-muted">Choisissez l’indicatif puis entrez votre numéro.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="date" style="color: #C7EA46;">Date souhaitée <span style="color:red">*</span></label>
+            <input type="date" class="form-control" id="date" required>
+          </div>
+
+          <button type="submit" class="btn btn-success btn-block">Réserver ma séance</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<script>
+$(document).ready(function() {
+
+  // Regex pour chaque pays
+  const numeroRegex = {
+    "+33": /^0[1-9](\s?\d{2}){4}$/,       // France: 0X XX XX XX XX
+    "+237": /^[2368]\d{1}(\s?\d{2}){3}$/, // Cameroun: 6X XX XX XX
+    "+49": /^0\d{2,4}\s?\d{6,8}$/         // Allemagne: 0XXX XXXXXX
+  };
+
+  // Changement dynamique du placeholder selon le pays
+  $("#indicatif").change(function() {
+    const placeholder = $(this).find(":selected").data("placeholder");
+    $("#tel").attr("placeholder", placeholder);
+  });
+
+  $("#reservationForm").submit(function(e) {
+    e.preventDefault();
+
+    const nom = $("#nom").val();
+    const email = $("#email").val();
+    const indicatif = $("#indicatif").val();
+    const numero = $("#tel").val().trim();
+    const date = $("#date").val();
+
+    // Vérification du format selon le pays
+    if(!numeroRegex[indicatif].test(numero)){
+      alert("❌ Numéro invalide pour le pays sélectionné. Veuillez respecter le format indiqué.");
+      return;
+    }
+
+    const numeroComplet = indicatif + numero.replace(/\s+/g, '');
+    alert(`✅ Réservation réussie !\nNom: ${nom}\nEmail: ${email}\nNuméro: ${numeroComplet}\nDate: ${date}`);
+
+    $('#reservationModal').modal('hide');
+    $(this).trigger("reset");
+    const defaultPlaceholder = $("#indicatif option:selected").data("placeholder");
+    $("#tel").attr("placeholder", defaultPlaceholder);
+  });
+});
+</script>
+
 
   <!-- ======= FOOTER ======= -->
   <section class="info_section py-4 bg-dark text-white">
@@ -138,10 +340,10 @@
 
   <script>
     $(document).ready(function(){
-      // Affichage de l’année actuelle
+      // Année actuelle
       document.getElementById('displayYear').innerText = new Date().getFullYear();
 
-      // Gestion du menu de langues sur le logo
+      // Menu langues sur logo
       const logoDropdown = document.getElementById('logo-dropdown');
       const langMenu = document.getElementById('lang-menu');
       if (logoDropdown && langMenu) {
@@ -167,6 +369,48 @@
           logoDropdown.classList.remove('show-menu');
         });
       }
+
+     // Chargement dynamique des vidéos
+const coachings = [
+    {
+        titre: '<span style="color: #1E40AF;">Coaching Développement Personnel</span>', 
+        video_url: "https://www.youtube.com/embed/dT7ID9qP6mc?si=TqfWC-jzwjXEnj2Z", 
+        niveau: '<span style="color: #FBBF24;">Débutant</span>'
+    },
+    {
+        titre: '<span style="color: #1E40AF;">Coaching Leadership</span>', 
+        video_url: "https://www.youtube.com/embed/9UI1PMF2Jog?si=yLLQmT9hE87iebw_", 
+        niveau: '<span style="color: #FBBF24;">Intermédiaire</span>'
+    },
+    {
+        titre: '<span style="color: #1E40AF;">Coaching Productivité</span>', 
+        video_url: "https://www.youtube.com/embed/Nnxg_Z08XHA?si=qPSAyhGldXvHU3r4", 
+        niveau: '<span style="color: #FBBF24;">Avancé</span>'
+    }
+];
+
+
+      coachings.forEach(coaching => {
+        $('#coachings-container').append(`
+          <div class="col-md-4 mb-4">
+            <div class="card h-100">
+              <iframe class="card-img-top" src="${coaching.video_url}" frameborder="0" allowfullscreen></iframe>
+              <div class="card-body">
+                <h5 class="card-title">${coaching.titre}</h5>
+                <p class="card-text">Niveau : ${coaching.niveau}</p>
+              </div>
+            </div>
+          </div>
+        `);
+      });
+
+      // Gestion formulaire réservation
+      $('#reservationForm').submit(function(e){
+        e.preventDefault();
+        alert("Merci ! Votre séance gratuite a été réservée. Nous vous contacterons bientôt.");
+        $('#reservationModal').modal('hide');
+        $(this).trigger("reset");
+      });
     });
   </script>
 </body>

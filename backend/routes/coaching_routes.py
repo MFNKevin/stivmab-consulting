@@ -1,13 +1,19 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from typing import List
 from backend.database.connection import SessionLocal
-from backend.models.coaching import Coaching
-from backend.schemas.coaching_schema import CoachingSchema, CoachingCreateSchema
+from backend.models.coaching import Coaching, Reservation, ContactMessage
+from backend.schemas.coaching_schema import (
+    CoachingResponse, ReservationCreate, ReservationResponse,
+    ContactMessageCreate, ContactMessageResponse
+)
 
-router = APIRouter(prefix="/coachings", tags=["Coachings"])
+# Crée le router
+router = APIRouter(
+    prefix="",
+    tags=["coachings"]
+)
 
-# --- Dépendance pour obtenir une session DB ---
+# Dépendance pour la session DB
 def get_db():
     db = SessionLocal()
     try:
@@ -15,54 +21,33 @@ def get_db():
     finally:
         db.close()
 
-# --- 1. Lister tous les coachings ---
-@router.get("/", response_model=List[CoachingSchema])
-def get_all_coachings(db: Session = Depends(get_db)):
+# ----- Routes -----
+
+@router.get("/coachings", response_model=list[CoachingResponse])
+def read_coachings(db: Session = Depends(get_db)):
     return db.query(Coaching).all()
 
-# --- 2. Récupérer un coaching par ID ---
-@router.get("/{coaching_id}", response_model=CoachingSchema)
-def get_coaching(coaching_id: int, db: Session = Depends(get_db)):
-    coaching = db.query(Coaching).filter(Coaching.id == coaching_id).first()
-    if not coaching:
-        raise HTTPException(status_code=404, detail="Coaching non trouvé")
-    return coaching
-
-# --- 3. Créer un nouveau coaching ---
-@router.post("/", response_model=CoachingSchema)
-def create_coaching(coaching_data: CoachingCreateSchema, db: Session = Depends(get_db)):
-    new_coaching = Coaching(
-        titre=coaching_data.titre,
-        description=coaching_data.description,
-        niveau=coaching_data.niveau
+@router.post("/reservations", response_model=ReservationResponse)
+def create_reservation(reservation: ReservationCreate, db: Session = Depends(get_db)):
+    db_res = Reservation(
+        nom=reservation.nom,
+        email=reservation.email,
+        coaching_id=reservation.coaching_id
     )
-    db.add(new_coaching)
+    db.add(db_res)
     db.commit()
-    db.refresh(new_coaching)
-    return new_coaching
-
-# --- 4. Modifier un coaching ---
-@router.put("/{coaching_id}", response_model=CoachingSchema)
-def update_coaching(coaching_id: int, coaching_data: CoachingCreateSchema, db: Session = Depends(get_db)):
-    coaching = db.query(Coaching).filter(Coaching.id == coaching_id).first()
-    if not coaching:
-        raise HTTPException(status_code=404, detail="Coaching non trouvé")
-
-    coaching.titre = coaching_data.titre
-    coaching.description = coaching_data.description
-    coaching.niveau = coaching_data.niveau
-
+    db.refresh(db_res)
+    return db_res
+@router.post("/contact-messages", response_model=ContactMessageResponse)
+def create_contact_message(message: ContactMessageCreate, db: Session = Depends(get_db)):
+    db_msg = ContactMessage(
+        nom=message.nom,
+        email=message.email,
+        telephone=message.telephone,
+        sujet=message.sujet,
+        message=message.message
+    )
+    db.add(db_msg)
     db.commit()
-    db.refresh(coaching)
-    return coaching
-
-# --- 5. Supprimer un coaching ---
-@router.delete("/{coaching_id}", response_model=dict)
-def delete_coaching(coaching_id: int, db: Session = Depends(get_db)):
-    coaching = db.query(Coaching).filter(Coaching.id == coaching_id).first()
-    if not coaching:
-        raise HTTPException(status_code=404, detail="Coaching non trouvé")
-
-    db.delete(coaching)
-    db.commit()
-    return {"message": "Coaching supprimé avec succès"}
+    db.refresh(db_msg)
+    return db_msg
