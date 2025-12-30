@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title data-i18n="navAbout">À Propos - StivMab Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="Ã€ Propos - StivMab Consulting" />
+  <meta name="theme-color" content="#0f2a44" />
+  <title>Ã€ Propos - StivMab Consulting</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -16,7 +18,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 
   <!-- Your main stylesheet -->
+  <link href="assets/css/theme.css" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive-forms.css" rel="stylesheet" />
+  <link href="assets/css/hamburger-menu.css" rel="stylesheet" />
 
   <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
@@ -43,7 +48,7 @@
         </div>
         <div class="lang_box d-flex align-items-center">
           <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
-          <span data-i18n="langLabel">Français</span>
+          <span>FranÃ§ais</span>
         </div>
       </div>
       </div>
@@ -58,14 +63,21 @@
           <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
         </a>
 
-        <div class="nav-center">
+        <!-- Bouton hamburger -->
+        <button class="navbar-toggler hamburger-btn" type="button" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-center" id="navbarMenu">
           <ul class="nav-links">
-            <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
-            <li><a href="coaching.html" data-i18n="navCoaching">Coaching</a></li>
-            <li><a href="about.html" class="active" data-i18n="navAbout">À propos</a></li>
-            <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
-            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="about.html" class="active">Ã€ propos</a></li>
+            <li><a href="investissement.html">Investissements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Se connecter</a></li>
           </ul>
         </div>
       </nav>
@@ -75,8 +87,8 @@
   <!-- ======= HERO SECTION ======= -->
   <section class="hero py-5" style="background: linear-gradient(135deg, #0f2a44 0%, #1a3f5a 100%);">
     <div class="container text-white">
-      <h1 style="color: #FFD700;">À Propos de Steve Nghotue</h1>
-      <p style="font-size: 1.2rem; margin-top: 15px;">Découvrez mon histoire et ma mission</p>
+      <h1 style="color: #FFD700;">Ã€ Propos de Steve Nghotue</h1>
+      <p style="font-size: 1.2rem; margin-top: 15px;">DÃ©couvrez mon histoire et ma mission</p>
     </div>
   </section>
 
@@ -85,27 +97,25 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-lg-4 text-center mb-4 mb-lg-0">
-          <div style="width: 200px; height: 200px; margin: 0 auto;">
-            <i class="fas fa-user-circle" style="font-size: 200px; color: #0f2a44; opacity: 0.8;"></i>
-          </div>
+          <img src="assets/images/bunz4ever.webp" alt="Steve Nghotue" style="width: 200px; height: 200px; margin: 0 auto; border-radius: 50%; object-fit: cover; border: 5px solid #FFD700; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);">
         </div>
         <div class="col-lg-8">
-          <h2 style="color: #0f2a44; margin-bottom: 20px;">Qui suis-je?</h2>
+          <h2 style="color: #FFD700; margin-bottom: 20px;">Qui suis-je?</h2>
           <p style="color: #ffffff; font-size: 1rem; line-height: 1.8;">
-            Steve Nghotue est un jeune entrepreneur Camerounais multilinguiste, passionné du sport et du savoir. Arrivé en Allemagne il y a plus de 12 ans pour poursuivre ses études, il s'est rapidement adapté au système éducatif allemand et a acquis une compréhension approfondie des processus d'intégration et d'immigration.
+            Steve Nghotue est un jeune entrepreneur Camerounais multilinguiste, passionnÃ© du sport et du savoir. ArrivÃ© en Allemagne il y a plus de 12 ans pour poursuivre ses Ã©tudes, il s'est rapidement adaptÃ© au systÃ¨me Ã©ducatif allemand et a acquis une comprÃ©hension approfondie des processus d'intÃ©gration et d'immigration.
           </p>
           <p style="color: #ffffff; font-size: 1rem; line-height: 1.8;">
-            Aujourd'hui, Steve est un Ingénieur Logiciel Intégrateur dans une grande multinationale allemande, un entrepreneur à part entière et un investisseur dans plusieurs domaines : immobilier, bourse, et technologies. Son parcours unique combine succès académique, carrière professionnelle florissante et achievements entrepreneuriaux.
+            Aujourd'hui, Steve est un IngÃ©nieur Logiciel IntÃ©grateur dans une grande multinationale allemande, un entrepreneur Ã  part entiÃ¨re et un investisseur dans plusieurs domaines : immobilier, bourse, et technologies. Son parcours unique combine succÃ¨s acadÃ©mique, carriÃ¨re professionnelle florissante et achievements entrepreneuriaux.
           </p>
           <p style="color: #ffffff; font-size: 1rem; line-height: 1.8;">
-            Fort de son expérience personnelle d'intégration réussie en Allemagne, Steve a décidé de transformer ses succès en mission: accompagner, conseiller et coacher d'autres entrepreneurs africains et migrants dans leur parcours vers le succès, l'intégration et la prospérité en Allemagne et au-delà.
+            Fort de son expÃ©rience personnelle d'intÃ©gration rÃ©ussie en Allemagne, Steve a dÃ©cidÃ© de transformer ses succÃ¨s en mission: accompagner, conseiller et coacher d'autres entrepreneurs africains et migrants dans leur parcours vers le succÃ¨s, l'intÃ©gration et la prospÃ©ritÃ© en Allemagne et au-delÃ .
           </p>
         </div>
       </div>
 
       <div class="row mt-5">
         <div class="col-12">
-          <h2 style="color: #0f2a44; text-align: center; margin-bottom: 40px;">Ma Mission & Mes Objectifs</h2>
+          <h2 style="color: #FFD700; text-align: center; margin-bottom: 40px;">Ma Mission & Mes Objectifs</h2>
         </div>
       </div>
 
@@ -115,14 +125,14 @@
             <div class="card-body">
               <h5 class="card-title" style="color: #0f2a44;">Ma Mission</h5>
               <p class="card-text" style="color: #333;">
-                S'est donné pour mission de <strong>coacher, conseiller et accompagner</strong> les entrepreneurs et migrants africains à:
+                S'est donnÃ© pour mission de <strong>coacher, conseiller et accompagner</strong> les entrepreneurs et migrants africains Ã :
               </p>
               <ul style="color: #333;">
-                <li>Naviguer avec succès les processus d'immigration en Allemagne</li>
-                <li>S'intégrer efficacement dans la société et le marché du travail allemand</li>
-                <li>Construire des carrières professionnelles durables et épanouissantes</li>
-                <li>Développer des activités entrepreneuriales prospères</li>
-                <li>Générer de la richesse et sécuriser leur avenir financier</li>
+                <li>Naviguer avec succÃ¨s les processus d'immigration en Allemagne</li>
+                <li>S'intÃ©grer efficacement dans la sociÃ©tÃ© et le marchÃ© du travail allemand</li>
+                <li>Construire des carriÃ¨res professionnelles durables et Ã©panouissantes</li>
+                <li>DÃ©velopper des activitÃ©s entrepreneuriales prospÃ¨res</li>
+                <li>GÃ©nÃ©rer de la richesse et sÃ©curiser leur avenir financier</li>
               </ul>
             </div>
           </div>
@@ -133,14 +143,14 @@
             <div class="card-body">
               <h5 class="card-title" style="color: #0f2a44;">Mon Objectif Principal</h5>
               <p class="card-text" style="color: #333;">
-                S'est fixé pour objectif principal de <strong>créer un impact positif et durable</strong>:
+                S'est fixÃ© pour objectif principal de <strong>crÃ©er un impact positif et durable</strong>:
               </p>
               <ul style="color: #333;">
-                <li>Démystifier les processus administratifs et légaux allemands</li>
-                <li>Partager ses connaissances et expériences personnelles</li>
-                <li>Créer une communauté d'entrepreneurs africains prospères en Allemagne</li>
-                <li>Servir de mentor et guide pour les générations futures</li>
-                <li>Contribuer au développement économique et social</li>
+                <li>DÃ©mystifier les processus administratifs et lÃ©gaux allemands</li>
+                <li>Partager ses connaissances et expÃ©riences personnelles</li>
+                <li>CrÃ©er une communautÃ© d'entrepreneurs africains prospÃ¨res en Allemagne</li>
+                <li>Servir de mentor et guide pour les gÃ©nÃ©rations futures</li>
+                <li>Contribuer au dÃ©veloppement Ã©conomique et social</li>
               </ul>
             </div>
           </div>
@@ -152,9 +162,9 @@
   <!-- ======= CTA SECTION ======= -->
   <section class="cta_section py-5" style="background-color: #0f2a44;">
     <div class="container text-center text-white">
-      <h3 style="color: #FFD700; margin-bottom: 15px;">Prêt à transformer votre vie en Allemagne?</h3>
-      <p style="color: #e8f0f8; margin-bottom: 30px;">Commencez votre parcours vers le succès avec mon accompagnement personnalisé</p>
-      <a href="contact.html" class="btn btn-primary btn-lg" style="background-color: #FFD700; border-color: #FFD700; color: #0f2a44; font-weight: bold;">Prenez contact dès maintenant</a>
+      <h3 style="color: #FFD700; margin-bottom: 15px;">PrÃªt Ã  transformer votre vie en Allemagne?</h3>
+      <p style="color: #e8f0f8; margin-bottom: 30px;">Commencez votre parcours vers le succÃ¨s avec mon accompagnement personnalisÃ©</p>
+      <a href="contact.html" class="btn btn-primary btn-lg" style="background-color: #FFD700; border-color: #FFD700; color: #0f2a44; font-weight: bold;">Prenez contact dÃ¨s maintenant</a>
     </div>
   </section>
 
@@ -164,24 +174,24 @@
       <div class="row">
         <div class="col-md-4 mb-3">
           <h5>StivMab Consulting</h5>
-          <p data-i18n="footerAbout">Votre partenaire pour une carrière réussie à l'étranger.</p>
+          <p>Votre partenaire pour une carriÃ¨re rÃ©ussie Ã  l'Ã©tranger.</p>
         </div>
         <div class="col-md-4 mb-3">
-          <h5 data-i18n="quickLinks">Liens rapides</h5>
+          <h5>Liens rapides</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white" data-i18n="navHome">Accueil</a></li>
-            <li><a href="coaching.html" class="text-white" data-i18n="navCoaching">Coaching</a></li>
-            <li><a href="contact.html" class="text-white" data-i18n="navContact">Contact</a></li>
+            <li><a href="index.html" class="text-white">Accueil</a></li>
+            <li><a href="coaching.html" class="text-white">Coaching</a></li>
+            <li><a href="contact.html" class="text-white">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-3">
-          <h5 data-i18n="contact">Contact</h5>
+          <h5>Contact</h5>
           <p>Email: <a href="mailto:Stevemab@gmail.com" class="text-white">Stevemab@gmail.com</a></p>
           <p>Tel: <a href="tel:+01123455678990" class="text-white">+01 123 455 678 990</a></p>
         </div>
       </div>
       <hr class="bg-light" />
-      <p class="text-center mb-0">&copy; 2024 StivMab Consulting. Tous droits réservés.</p>
+      <p class="text-center mb-0">&copy; 2024 StivMab Consulting. Tous droits rÃ©servÃ©s.</p>
     </div>
   </footer>
 
@@ -191,3 +201,4 @@
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+

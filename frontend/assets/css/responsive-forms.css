@@ -1,0 +1,320 @@
+/* ============================
+   MODAL & FORMULAIRES - RESPONSIVE
+============================ */
+
+:root {
+  --stiv-primary: #0f2a44; /* deep navy */
+  --stiv-primary-2: #122541; /* darker gradient */
+  --stiv-card: #1c2f4f; /* card background */
+  --stiv-accent: #FFD700; /* gold */
+  --stiv-bg: #0b2238; /* page background */
+  --stiv-text: #f5f7fa; /* main text */
+  --stiv-muted: #c9d6e3;
+  --stiv-border: rgba(255,215,0,0.15);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: var(--stiv-card);
+  border: 2px solid var(--stiv-accent);
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.modal-header {
+  background-color: var(--stiv-primary);
+  border-bottom: 2px solid var(--stiv-accent);
+  padding: 20px;
+}
+
+.modal-title {
+  color: var(--stiv-accent);
+  font-weight: 700;
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+.modal-body {
+  padding: 25px 20px;
+  background-color: var(--stiv-primary);
+}
+
+.close {
+  color: var(--stiv-accent);
+  opacity: 1;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.close:hover, .close:focus {
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: var(--stiv-accent);
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-bottom: 8px;
+  display: block;
+}
+
+.required-field {
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-left: 2px;
+}
+
+/* Form Controls */
+.form-control {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--stiv-accent);
+  color: var(--stiv-text);
+  border-radius: 6px;
+  padding: 12px 15px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  transition: all 0.3s ease;
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.form-control:focus {
+  background-color: rgba(255, 255, 255, 0.08);
+  border-color: #ffffff;
+  color: var(--stiv-text);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  outline: none;
+}
+
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+}
+
+.form-control:-webkit-autofill {
+  -webkit-box-shadow: inset 0 0 0 1000px var(--stiv-primary) !important;
+  -webkit-text-fill-color: var(--stiv-text) !important;
+}
+
+/* Phone Input Group */
+.phone-input-group {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.country-select {
+  flex: 0 0 auto;
+  min-width: 120px;
+  max-width: 150px;
+}
+
+.phone-input-group .form-control:not(.country-select) {
+  flex: 1 1 auto;
+  min-width: 150px;
+}
+
+/* Responsive phone input */
+@media (max-width: 575px) {
+  .phone-input-group {
+    flex-direction: column;
+  }
+
+  .country-select {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .phone-input-group .form-control:not(.country-select) {
+    min-width: 100%;
+  }
+}
+
+/* Boutons de formulaire */
+.modal-body .btn {
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 16px);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-success {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: white;
+}
+
+.btn-success:hover, .btn-success:focus {
+  background-color: #229954;
+  border-color: #229954;
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.form-text {
+  font-size: clamp(12px, 2vw, 14px);
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 6px;
+  display: block;
+}
+
+/* Modal Dialog Centered */
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - 3.5rem);
+}
+
+@media (max-width: 575px) {
+  .modal-dialog-centered {
+    min-height: auto;
+  }
+
+  .modal {
+    padding: 10px !important;
+  }
+
+  .modal-content {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .modal-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+  }
+}
+
+/* Input type date styling pour tous navigateurs */
+input[type="date"] {
+  position: relative;
+  padding: 12px 15px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-right: 2px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Select dropdown styling */
+select.form-control {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='%23FFD700' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 16px;
+  padding-right: 35px;
+}
+
+select.form-control::-ms-expand {
+  display: none;
+}
+
+/* Focus visible pour l'accessibilité clavier */
+input:focus-visible, select:focus-visible, textarea:focus-visible, button:focus-visible {
+  outline: 2px solid var(--stiv-accent);
+  outline-offset: 2px;
+}
+
+/* Media Queries Supplémentaires */
+/* Mobile - très petit écran (< 576px) */
+@media (max-width: 575px) {
+  .modal-body {
+    padding: 20px 15px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-control {
+    font-size: 16px;
+    padding: 14px 12px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 14px 16px;
+  }
+}
+
+/* Tablette (576px - 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+  .modal-body {
+    padding: 22px 18px;
+  }
+
+  .form-control {
+    font-size: 15px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .modal-content {
+    background-color: var(--stiv-card);
+  }
+
+  .form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--stiv-text);
+  }
+}
+
+/* Préférence de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  .form-control,
+  .btn,
+  .close {
+    transition: none !important;
+  }
+
+  .form-control:focus,
+  .btn:hover {
+    transform: none !important;
+  }
+}
+
+/* Contraste élevé */
+@media (prefers-contrast: more) {
+  .modal-header,
+  .modal-body {
+    border-width: 3px;
+  }
+
+  .form-control {
+    border-width: 3px;
+  }
+
+  .btn {
+    border-width: 2px;
+  }
+}

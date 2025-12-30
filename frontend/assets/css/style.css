@@ -224,11 +224,9 @@ a:focus-visible {
 }
 
 .logo-link {
-  position: absolute;
-  left: 18px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   z-index: 50;
 }
 
@@ -244,12 +242,12 @@ a:focus-visible {
 
 .logo-link img:hover,
 .logo-link img:focus {
-  transform: translateY(-50%) scale(1.08);
+  transform: scale(1.08);
   box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
   outline: 2px solid #FFD700;
 }
 
-/* Décaler la barre de navigation centrée pour éviter recouvrement */
+/* Navigation centrée */
 .nav-center {
   margin: 0 auto;
   max-width: 980px;
@@ -257,7 +255,7 @@ a:focus-visible {
 
 @media (min-width: 992px) {
   .nav-center {
-    padding-left: 90px;
+    padding-left: 0;
     padding-right: 90px;
   }
 }
@@ -1364,5 +1362,662 @@ a:focus-visible {
 @media (min-width: 1400px) {
   .container {
     max-width: 1320px;
+  }
+}
+/* ============================
+   SECTION COACHING - RESPONSIVE
+============================ */
+.coaching_section {
+  background-color: var(--stiv-bg);
+  padding: 40px 20px;
+}
+
+.coaching_section .heading_container {
+  margin-bottom: 50px;
+}
+
+.coaching-title {
+  color: var(--stiv-primary);
+  font-weight: 900;
+  font-size: clamp(24px, 5vw, 42px);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.coaching-subtitle {
+  color: var(--stiv-text);
+  font-size: clamp(16px, 3vw, 20px);
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+}
+
+.coaching-cta {
+  color: var(--stiv-accent);
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 18px);
+  margin-top: 20px;
+}
+
+/* Service Cards - Cartes principales */
+.service-card {
+  padding: 30px 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+}
+
+.service-card-immigration {
+  background: linear-gradient(135deg, var(--stiv-primary) 0%, #1a3f5a 100%);
+}
+
+.service-card-integration {
+  background: linear-gradient(135deg, #1a3f5a 0%, var(--stiv-primary) 100%);
+}
+
+.service-card-business {
+  background: linear-gradient(135deg, var(--stiv-primary) 0%, #051628 100%);
+}
+
+.service-icon {
+  font-size: clamp(40px, 8vw, 56px);
+  color: var(--stiv-accent);
+  margin-bottom: 15px;
+}
+
+.service-card-title {
+  color: var(--stiv-accent);
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-size: clamp(18px, 3vw, 24px);
+}
+
+.service-card-description {
+  font-size: clamp(14px, 2.5vw, 16px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Service Content Cards - Cartes de contenu */
+.service-content-card {
+  background-color: rgba(28, 47, 79, 0.6);
+  border: 2px solid var(--stiv-accent);
+  border-radius: 12px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.service-content-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  border-color: #ffffff;
+}
+
+/* Service Lists */
+.service-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.service-list-item {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.service-list-item:last-child {
+  border-bottom: none;
+}
+
+.service-list-item:hover {
+  padding-left: 10px;
+}
+
+.service-list-title {
+  color: var(--stiv-accent);
+  display: block;
+  font-weight: 700;
+  font-size: clamp(14px, 2.5vw, 16px);
+  margin-bottom: 8px;
+}
+
+.service-list-description {
+  color: var(--stiv-text);
+  margin: 8px 0 0 0;
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.5;
+}
+
+/* Business Lists */
+.business-subsection-title {
+  color: var(--stiv-accent);
+  margin: 25px 0 15px 0;
+  font-weight: 700;
+  font-size: clamp(16px, 2.8vw, 18px);
+}
+
+.business-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 25px 0;
+}
+
+.business-list li {
+  padding: 12px 0;
+  color: var(--stiv-text);
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+.business-check {
+  color: var(--stiv-accent);
+  margin-right: 12px;
+  font-size: clamp(12px, 2vw, 14px);
+  flex-shrink: 0;
+}
+
+/* Bouton réservation */
+.btn-reserve-session {
+  background-color: var(--stiv-primary);
+  color: var(--stiv-accent);
+  border: 2px solid var(--stiv-accent);
+  font-weight: 700;
+  padding: 14px 35px;
+  font-size: clamp(14px, 2.5vw, 16px);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  min-height: 48px;
+  min-width: 200px;
+  text-align: center;
+}
+
+.btn-reserve-session:hover {
+  background-color: var(--stiv-accent);
+  color: var(--stiv-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+  text-decoration: none;
+}
+
+.btn-reserve-session:active {
+  transform: translateY(0);
+}
+
+.btn-reserve-session:focus {
+  outline: 2px solid var(--stiv-accent);
+  outline-offset: 2px;
+}
+
+/* ============================
+   RESPONSIVE MEDIA QUERIES
+============================ */
+
+/* Mobile - très petit écran (< 576px) */
+@media (max-width: 575px) {
+  body {
+    font-size: 14px;
+  }
+
+  .topbar {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .header_bottom {
+    padding: 10px 0;
+  }
+
+  .navbar {
+    min-height: 60px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .nav-links a {
+    padding: 6px 10px;
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .logo-link {
+    margin-bottom: 10px;
+  }
+
+  .logo-link img {
+    height: 50px;
+    width: 50px;
+  }
+
+  .contact_nav {
+    flex-direction: column;
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero h1 span {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .coaching_section {
+    padding: 25px 15px;
+  }
+
+  .service-card {
+    padding: 20px 15px;
+    min-height: 240px;
+  }
+
+  .service-content-card {
+    padding: 20px 15px;
+  }
+
+  .service-list-item {
+    padding: 12px 0;
+  }
+
+  .btn-reserve-session {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .modal-dialog {
+    margin: 10px;
+  }
+
+  .modal-content {
+    padding: 15px;
+  }
+
+  .form-control {
+    font-size: 16px;
+    padding: 10px 12px;
+  }
+}
+
+/* Tablette petite (576px - 768px) */
+@media (min-width: 576px) and (max-width: 768px) {
+  .nav-links {
+    gap: 12px;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 15px;
+  }
+
+  .coaching-title {
+    font-size: 32px;
+  }
+
+  .coaching-subtitle {
+    font-size: 16px;
+  }
+
+  .service-card {
+    padding: 25px 18px;
+    min-height: 260px;
+  }
+
+  .service-content-card {
+    padding: 25px 18px;
+  }
+
+  .service-list-item {
+    padding: 14px 0;
+  }
+}
+
+/* Tablette grande (769px - 992px) */
+@media (min-width: 769px) and (max-width: 992px) {
+  .nav-links {
+    gap: 15px;
+  }
+
+  .coaching-title {
+    font-size: 36px;
+  }
+
+  .service-card {
+    padding: 25px 20px;
+    min-height: 270px;
+  }
+}
+
+/* Desktop petit (993px - 1199px) */
+@media (min-width: 993px) {
+  .nav-links {
+    gap: 20px;
+  }
+}
+
+/* Accessibilité - Préférence de mouvement réduit */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+
+  .btn-reserve-session:hover {
+    transform: none;
+  }
+}
+
+/* Accessibilité - Contraste élevé */
+@media (prefers-contrast: more) {
+  .service-card {
+    border: 3px solid var(--stiv-accent);
+  }
+
+  .service-content-card {
+    border: 3px solid var(--stiv-accent);
+  }
+
+  .topbar {
+    border-bottom: 3px solid var(--stiv-accent);
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--stiv-bg);
+    color: var(--stiv-text);
+  }
+}
+
+/* Très grand écran (> 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+
+  .coaching_section {
+    padding: 60px 40px;
+  }
+}
+
+/* ============================
+   TOPBAR - RESPONSIVE IMPROVEMENTS
+============================ */
+
+/* Mobile topbar */
+@media (max-width: 575px) {
+  .topbar {
+    padding: 8px 0;
+    font-size: 12px;
+  }
+
+  .topbar .container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social_box a {
+    padding: 6px;
+    font-size: 16px;
+  }
+
+  .contact_nav {
+    display: none !important;
+  }
+
+  .lang_box {
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lang_box img {
+    height: 16px;
+  }
+
+  .lang_box span {
+    font-size: 12px;
+  }
+}
+
+/* Tablette topbar */
+@media (min-width: 576px) and (max-width: 768px) {
+  .topbar {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .topbar .container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .contact_nav {
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px !important;
+    margin: 0 !important;
+  }
+
+  .contact_nav a {
+    font-size: 12px;
+  }
+
+  .lang_box {
+    margin: 0;
+  }
+}
+
+/* ============================
+   FOOTER - RESPONSIVE
+============================ */
+
+.info_section {
+  padding: 40px 20px;
+}
+
+.info_section h5 {
+  color: var(--stiv-accent);
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: clamp(16px, 2.8vw, 18px);
+}
+
+.info_section p, .info_section a {
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.6;
+}
+
+.info_section ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.info_section ul li {
+  margin-bottom: 10px;
+  font-size: clamp(13px, 2.2vw, 15px);
+}
+
+.info_section a {
+  color: var(--stiv-accent);
+  transition: all 0.2s ease;
+}
+
+.info_section a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* Footer form responsive */
+.info_section .form-row {
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.info_section .form-row .col {
+  flex: 1 1 auto;
+  min-width: 150px;
+}
+
+.info_section .form-row .col-auto {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 575px) {
+  .info_section {
+    padding: 30px 15px;
+  }
+
+  .info_section .row {
+    gap: 20px;
+  }
+
+  .info_section .col-md-4 {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .info_section .form-row {
+    flex-direction: column;
+  }
+
+  .info_section .form-row .col,
+  .info_section .form-row .col-auto {
+    min-width: 100%;
+  }
+
+  .info_section button {
+    width: 100%;
+  }
+}
+
+/* ============================
+   GRID LAYOUT OPTIMIZATIONS
+============================ */
+
+/* Assurer que les colonnes responsive fonctionnent bien */
+.col-12, .col-md-4, .col-md-6, .col-lg-4, .col-lg-8 {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 575px) {
+  .col-12, .col-md-4, .col-md-6, .col-lg-4, .col-lg-8 {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .row {
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+}
+
+/* ============================
+   SCROLL BEHAVIOR & OVERFLOW
+============================ */
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  overflow-x: hidden;
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fix pour iframe responsive (vidéos YouTube, etc.) */
+iframe {
+  max-width: 100%;
+  width: 100% !important;
+}
+
+/* ============================
+   TOUCHSCREEN OPTIMIZATIONS
+============================ */
+
+@media (hover: none) and (pointer: coarse) {
+  /* Touchscreen devices */
+  a, button, input[type="button"], input[type="submit"], .btn {
+    min-height: 48px;
+    min-width: 48px;
+    padding: 12px 16px;
+    tap-highlight-color: rgba(255, 215, 0, 0.2);
+  }
+
+  /* Augmenter les zones tactiles sur mobile */
+  .nav-links a {
+    padding: 10px 14px;
+  }
+
+  .form-control {
+    padding: 14px 15px;
+    font-size: 16px;
+  }
+}
+
+/* ============================
+   PRINT STYLES
+============================ */
+
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  .topbar, .header_bottom, .modal, .btn-reserve-session {
+    display: none;
+  }
+
+  .coaching_section {
+    padding: 20px;
+  }
+
+  .service-card, .service-content-card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ccc;
   }
 }

@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title data-i18n="servicesPageTitle">Nos Services - StivMab Consulting</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="Nos Services - StivMab Consulting" />
+  <meta name="theme-color" content="#0f2a44" />
+  <title>Nos Services - StivMab Consulting</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -16,7 +18,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 
   <!-- Your main stylesheet -->
+  <link href="assets/css/theme.css" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive-forms.css" rel="stylesheet" />
+  <link href="assets/css/hamburger-menu.css" rel="stylesheet" />
 
   <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
@@ -31,7 +36,7 @@
       <div class="d-flex align-items-center">
         <div class="lang_box mr-3 d-flex align-items-center">
           <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
-          <span data-i18n="langLabel">Français</span>
+          <span>FranÃ§ais</span>
         </div>
         <div class="contact_nav d-none d-md-flex">
           <a href="tel:+33612345678"><i class="fa fa-phone"></i><span class="ml-1">+33 6 12 34 56 78</span></a>
@@ -53,14 +58,25 @@
   <div class="header_bottom py-3">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-        <div class="nav-center">
+        <a href="index.html" class="logo-link">
+          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+        </a>
+
+        <!-- Bouton hamburger -->
+        <button class="navbar-toggler hamburger-btn" type="button" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-center" id="navbarMenu">
           <ul class="nav-links">
-            <li><a href="index.html" data-i18n="navHome">Accueil</a></li>
-            <li><a href="coaching.html" data-i18n="navCoaching">Coaching</a></li>
-            <li><a href="about.html" data-i18n="navFormation">Formation</a></li>
-            <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
-            <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-            <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="about.html">Formation</a></li>
+            <li><a href="investissement.html">Investissements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Se connecter</a></li>
           </ul>
         </div>
 
@@ -79,8 +95,8 @@
   <!-- HERO SECTION -->
   <section class="hero py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 300px; display: flex; align-items: center;">
     <div class="container text-white text-center">
-      <h1 data-i18n="navServices">Nos Services</h1>
-      <p data-i18n="pillarsDescription">Accompagnement complet pour votre réussite en Allemagne</p>
+      <h1>Nos Services</h1>
+      <p>Accompagnement complet pour votre rÃ©ussite en Allemagne</p>
     </div>
   </section>
 
@@ -89,35 +105,35 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <h2 class="mb-4" data-i18n="pillar1Title">Immigration</h2>
-          <p class="lead" data-i18n="pillar1Desc">Assistance complète pour vos démarches administratives et visa</p>
+          <h2 class="mb-4">Immigration</h2>
+          <p class="lead">Assistance complÃ¨te pour vos dÃ©marches administratives et visa</p>
           
           <div class="mt-4">
             <h5 class="mb-3">Services inclus :</h5>
             <ul class="list-unstyled">
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Consultation visa gratuite</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Préparation du dossier complet</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> PrÃ©paration du dossier complet</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Suivi administratif</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Accompagnement interview ambassade</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Assistance après arrivée</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Assistance aprÃ¨s arrivÃ©e</li>
             </ul>
           </div>
 
-          <h5 class="mt-5 mb-3">Catégories de visa :</h5>
+          <h5 class="mt-5 mb-3">CatÃ©gories de visa :</h5>
           <div class="row">
             <div class="col-md-6">
-              <p><strong>• Étudiant</strong></p>
-              <p><strong>• Chercheur</strong></p>
-              <p><strong>• Travailleur qualifié</strong></p>
+              <p><strong>â€¢ Ã‰tudiant</strong></p>
+              <p><strong>â€¢ Chercheur</strong></p>
+              <p><strong>â€¢ Travailleur qualifiÃ©</strong></p>
             </div>
             <div class="col-md-6">
-              <p><strong>• Regroupement familial</strong></p>
-              <p><strong>• Entrepreneur/Freelance</strong></p>
-              <p><strong>• Visiteur longue durée</strong></p>
+              <p><strong>â€¢ Regroupement familial</strong></p>
+              <p><strong>â€¢ Entrepreneur/Freelance</strong></p>
+              <p><strong>â€¢ Visiteur longue durÃ©e</strong></p>
             </div>
           </div>
 
-          <a href="contact.html" class="btn btn-primary btn-lg mt-4" data-i18n="consultNow">Consulter un expert</a>
+          <a href="contact.html" class="btn btn-primary btn-lg mt-4">Consulter un expert</a>
         </div>
 
         <div class="col-md-6">
@@ -134,34 +150,34 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-md-6 order-md-2">
-          <h2 class="mb-4" data-i18n="pillar2Title">Intégration</h2>
-          <p class="lead" data-i18n="pillar2Desc">Préparation linguistique et culturelle pour une meilleure adaptation</p>
+          <h2 class="mb-4">IntÃ©gration</h2>
+          <p class="lead">PrÃ©paration linguistique et culturelle pour une meilleure adaptation</p>
           
           <div class="mt-4">
             <h5 class="mb-3">Services inclus :</h5>
             <ul class="list-unstyled">
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Cours d'allemand (tous niveaux)</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Préparation examens (GOETHE, TestDaF, TOEFL)</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> PrÃ©paration examens (GOETHE, TestDaF, TOEFL)</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Coaching culturel & social</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Aide recherche logement</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Ouverture compte bancaire</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Inscription auprès des autorités</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Inscription auprÃ¨s des autoritÃ©s</li>
             </ul>
           </div>
 
           <h5 class="mt-5 mb-3">Formats d'apprentissage :</h5>
           <div class="row">
             <div class="col-md-6">
-              <p><i class="fas fa-circle text-success mr-2"></i> Cours privés</p>
+              <p><i class="fas fa-circle text-success mr-2"></i> Cours privÃ©s</p>
               <p><i class="fas fa-circle text-success mr-2"></i> Petits groupes</p>
             </div>
             <div class="col-md-6">
-              <p><i class="fas fa-circle text-success mr-2"></i> Online & Présentiel</p>
-              <p><i class="fas fa-circle text-success mr-2"></i> Modules accélérés</p>
+              <p><i class="fas fa-circle text-success mr-2"></i> Online & PrÃ©sentiel</p>
+              <p><i class="fas fa-circle text-success mr-2"></i> Modules accÃ©lÃ©rÃ©s</p>
             </div>
           </div>
 
-          <a href="contact.html" class="btn btn-primary btn-lg mt-4" data-i18n="consultNow">Consulter un expert</a>
+          <a href="contact.html" class="btn btn-primary btn-lg mt-4">Consulter un expert</a>
         </div>
 
         <div class="col-md-6 order-md-1">
@@ -178,34 +194,34 @@
     <div class="container">
       <div class="row align-items-center mb-5">
         <div class="col-md-6">
-          <h2 class="mb-4" data-i18n="pillar3Title">Business</h2>
-          <p class="lead" data-i18n="pillar3Desc">Opportunités d'investissement immobilier et financement</p>
+          <h2 class="mb-4">Business</h2>
+          <p class="lead">OpportunitÃ©s d'investissement immobilier et financement</p>
           
           <div class="mt-4">
             <h5 class="mb-3">Services inclus :</h5>
             <ul class="list-unstyled">
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Identification d'opportunités immobilières</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Identification d'opportunitÃ©s immobiliÃ¨res</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Conseil en financement & bourse</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Création d'entreprise (GmbH, GbR)</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> CrÃ©ation d'entreprise (GmbH, GbR)</li>
               <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Partenariats commerciaux</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Accompagnement fiscal & légal</li>
-              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Développement business plan</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> Accompagnement fiscal & lÃ©gal</li>
+              <li class="mb-2"><i class="fas fa-check text-success mr-2"></i> DÃ©veloppement business plan</li>
             </ul>
           </div>
 
           <h5 class="mt-5 mb-3">Types d'investissements :</h5>
           <div class="row">
             <div class="col-md-6">
-              <p><strong>• Immobilier</strong></p>
-              <p><strong>• Immobilier commercial</strong></p>
+              <p><strong>â€¢ Immobilier</strong></p>
+              <p><strong>â€¢ Immobilier commercial</strong></p>
             </div>
             <div class="col-md-6">
-              <p><strong>• Création d'entreprise</strong></p>
-              <p><strong>• Partenariats</strong></p>
+              <p><strong>â€¢ CrÃ©ation d'entreprise</strong></p>
+              <p><strong>â€¢ Partenariats</strong></p>
             </div>
           </div>
 
-          <a href="contact.html" class="btn btn-primary btn-lg mt-4" data-i18n="consultNow">Consulter un expert</a>
+          <a href="contact.html" class="btn btn-primary btn-lg mt-4">Consulter un expert</a>
         </div>
 
         <div class="col-md-6">
@@ -231,8 +247,8 @@
 
         <div class="col-md-3 text-center mb-4">
           <div style="background-color: #764ba2; color: white; width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">2</div>
-          <h5>Plan personnalisé</h5>
-          <p>Création d'une stratégie adaptée à votre situation</p>
+          <h5>Plan personnalisÃ©</h5>
+          <p>CrÃ©ation d'une stratÃ©gie adaptÃ©e Ã  votre situation</p>
         </div>
 
         <div class="col-md-3 text-center mb-4">
@@ -243,7 +259,7 @@
 
         <div class="col-md-3 text-center mb-4">
           <div style="background-color: #667eea; color: white; width: 60px; height: 60px; border-radius: 50%; margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold;">4</div>
-          <h5>Succès réalisé</h5>
+          <h5>SuccÃ¨s rÃ©alisÃ©</h5>
           <p>Atteinte de vos objectifs en Allemagne</p>
         </div>
       </div>
@@ -253,8 +269,8 @@
   <!-- CTA SECTION -->
   <section class="cta_section py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
     <div class="container text-center">
-      <h3>Prêt à commencer ?</h3>
-      <p>Réservez votre consultation gratuite dès maintenant</p>
+      <h3>PrÃªt Ã  commencer ?</h3>
+      <p>RÃ©servez votre consultation gratuite dÃ¨s maintenant</p>
       <a href="contact.html" class="btn btn-light btn-lg mt-3" style="font-weight: 600;">Nous contacter</a>
     </div>
   </section>
@@ -264,29 +280,29 @@
     <div class="container">
       <div class="row mb-4">
         <div class="col-md-4 mb-4">
-          <h5 data-i18n="footerAbout">À propos</h5>
-          <p data-i18n="footerAboutText">StivMab Consulting vous accompagne vers la réussite en Allemagne.</p>
+          <h5>Ã€ propos</h5>
+          <p>StivMab Consulting vous accompagne vers la rÃ©ussite en Allemagne.</p>
         </div>
 
         <div class="col-md-4 mb-4">
-          <h5 data-i18n="quickLinks">Liens rapides</h5>
+          <h5>Liens rapides</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white" data-i18n="navHome">Accueil</a></li>
-            <li><a href="services.html" class="text-white" data-i18n="navServices">Services</a></li>
-            <li><a href="coaching.html" class="text-white" data-i18n="navCoaching">Coaching</a></li>
-            <li><a href="contact.html" class="text-white" data-i18n="navContact">Contact</a></li>
+            <li><a href="index.html" class="text-white">Accueil</a></li>
+            <li><a href="services.html" class="text-white">Services</a></li>
+            <li><a href="coaching.html" class="text-white">Coaching</a></li>
+            <li><a href="contact.html" class="text-white">Contact</a></li>
           </ul>
         </div>
 
         <div class="col-md-4 mb-4">
-          <h5 data-i18n="contact">Contact</h5>
+          <h5>Contact</h5>
           <p><a href="mailto:contact@stivmab.com" class="text-white">contact@stivmab.com</a></p>
           <p><a href="tel:+33612345678" class="text-white">+33 6 12 34 56 78</a></p>
         </div>
       </div>
 
       <hr class="bg-light">
-      <p class="text-center mb-0">&copy; <span id="displayYear"></span> StivMab Consulting. Tous droits réservés.</p>
+      <p class="text-center mb-0">&copy; <span id="displayYear"></span> StivMab Consulting. Tous droits rÃ©servÃ©s.</p>
     </div>
   </footer>
 
@@ -327,3 +343,4 @@
   </script>
 </body>
 </html>
+

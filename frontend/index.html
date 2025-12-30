@@ -1,11 +1,12 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title data-i18n="pageTitle">StivMab Consulting - Réussir en Allemagne</title>
-  <meta name="description" data-i18n="pageDescription">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=5.0, user-scalable=yes" />
+  <meta name="description" content="StivMab Consulting - RÃ©ussir en Allemagne" />
+  <meta name="theme-color" content="#0f2a44" />
+  <title>StivMab Consulting - RÃ©ussir en Allemagne</title>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -21,7 +22,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
 
   <!-- Your main stylesheet -->
+  <link href="assets/css/theme.css" rel="stylesheet" />
   <link href="assets/css/style.css" rel="stylesheet" />
+  <link href="assets/css/responsive-forms.css" rel="stylesheet" />
+  <link href="assets/css/hamburger-menu.css" rel="stylesheet" />
 
   <!-- i18next -->
   <script src="https://unpkg.com/i18next@23.4.6/i18next.min.js"></script>
@@ -47,7 +51,7 @@
         </div>
         <div class="lang_box d-flex align-items-center">
           <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
-          <span data-i18n="langLabel">Français</span>
+          <span>FranÃ§ais</span>
         </div>
       </div>
     </div>
@@ -57,19 +61,27 @@
   <div class="header_bottom py-3">
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container">
-                <a href="index.html" class="logo-link">
-                    <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
-                </a>
-                <div class="nav-center">
-                    <ul class="nav-links">
-                        <li><a href="index.html" class="active" data-i18n="navHome">Accueil</a></li>
-                        <li><a href="coaching.html" data-i18n="navCoaching">Coaching</a></li>
-                        <li><a href="about.html" data-i18n="navAbout">À propos</a></li>
-                        <li><a href="investissement.html" data-i18n="navInvestissement">Investissements</a></li>
-                        <li><a href="contact.html" data-i18n="navContact">Contact</a></li>
-                        <li><a href="login.html" class="btn-login" data-i18n="navLogin">Se connecter</a></li>
-                    </ul>
-                </div>
+        <a href="index.html" class="logo-link">
+          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+        </a>
+
+        <!-- Bouton hamburger -->
+        <button class="navbar-toggler hamburger-btn" type="button" aria-label="Toggle navigation">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+
+        <div class="nav-center" id="navbarMenu">
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="coaching.html">Coaching</a></li>
+            <li><a href="about.html">Ã€ propos</a></li>
+            <li><a href="investissement.html">Investissements</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html" class="btn-login">Se connecter</a></li>
+          </ul>
+        </div>
       </nav>
     </div>
   </div>
@@ -77,10 +89,10 @@
     <!-- HERO SECTION -->
     <div class="hero">
         <div class="container">
-            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">S'Intégrer et Investir en Allemagne</h1>
+            <h1 style="font-size: 2.5rem; margin-bottom: 20px;">S'IntÃ©grer et Investir en Allemagne</h1>
             <h2 style="font-size: 2rem; color: #FFD700; margin-bottom: 30px;">Je suis Steve Nghotue</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">J'aide et accompagne les africains dans la réussite de leurs projets d'immigration, leur intégration sur le territoire à travers des conseils, des coachings, des formations et stratégies.</p>
-            <a href="contact.html" class="btn btn-primary btn-lg" data-i18n="heroCTA">Commencer maintenant</a>
+            <p style="font-size: 1.2rem; margin-bottom: 20px;">J'aide et accompagne les africains dans la rÃ©ussite de leurs projets d'immigration, leur intÃ©gration sur le territoire Ã  travers des conseils, des coachings, des formations et stratÃ©gies.</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Commencer maintenant</a>
         </div>
     </div>
 
@@ -93,12 +105,12 @@
                     <div class="pillar-icon">
                         <i class="fas fa-passport"></i>
                     </div>
-                    <h3 data-i18n="pillar1Title">Immigration</h3>
-                    <p data-i18n="pillar1Desc">Assistance complète pour votre dossier de visa, permis de travail et démarches administratives en Allemagne</p>
+                    <h3>Immigration</h3>
+                    <p>Assistance complÃ¨te pour votre dossier de visa, permis de travail et dÃ©marches administratives en Allemagne</p>
                     <ul style="color: #666; text-align: left;">
-                        <li data-i18n="pillar1Item1">Consultation en immigration</li>
-                        <li data-i18n="pillar1Item2">Préparation de dossiers visa</li>
-                        <li data-i18n="pillar1Item3">Suivi administratif</li>
+                        <li>Consultation en immigration</li>
+                        <li>PrÃ©paration de dossiers visa</li>
+                        <li>Suivi administratif</li>
                     </ul>
                 </div>
             </div>
@@ -109,12 +121,12 @@
                     <div class="pillar-icon">
                         <i class="fas fa-handshake"></i>
                     </div>
-                    <h3 data-i18n="pillar2Title">Intégration</h3>
-                    <p data-i18n="pillar2Desc">Cours de langue allemande, intégration socio-culturelle et réseautage professionnel</p>
+                    <h3>IntÃ©gration</h3>
+                    <p>Cours de langue allemande, intÃ©gration socio-culturelle et rÃ©seautage professionnel</p>
                     <ul style="color: #666; text-align: left;">
-                        <li data-i18n="pillar2Item1">Cours d'allemand (A1-C2)</li>
-                        <li data-i18n="pillar2Item2">Préparation TestDaF/GOETHE</li>
-                        <li data-i18n="pillar2Item3">Accompagnement social</li>
+                        <li>Cours d'allemand (A1-C2)</li>
+                        <li>PrÃ©paration TestDaF/GOETHE</li>
+                        <li>Accompagnement social</li>
                     </ul>
                 </div>
             </div>
@@ -125,12 +137,12 @@
                     <div class="pillar-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <h3 data-i18n="pillar3Title">Business</h3>
-                    <p data-i18n="pillar3Desc">Création d'entreprise, financement, et opportunités d'affaires en Allemagne</p>
+                    <h3>Business</h3>
+                    <p>CrÃ©ation d'entreprise, financement, et opportunitÃ©s d'affaires en Allemagne</p>
                     <ul style="color: #666; text-align: left;">
-                        <li data-i18n="pillar3Item1">Conseil en entrepreneuriat</li>
-                        <li data-i18n="pillar3Item2">Aide financement</li>
-                        <li data-i18n="pillar3Item3">Réseautage business</li>
+                        <li>Conseil en entrepreneuriat</li>
+                        <li>Aide financement</li>
+                        <li>RÃ©seautage business</li>
                     </ul>
                 </div>
             </div>
@@ -155,11 +167,11 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="about-text">
-                        <h3 style="color: #ffffff;">Mon expérience</h3>
-                        <p>Arrivé en Allemagne il y a 12 ans pour faire mes études, j'ai dû être confronté à l'intégration comme toute personne immigrant vers un pays nouveau.</p>
-                        <p>J'ai connu des personnes qui souhaitaient venir étudier, se former, ou retrouver leur conjoint mais qui ont eu des difficultés et ont vu leur dossier rejetés pour des raisons anticipables et évitables.</p>
-                        <p>J'ai vu des personnes voir leur dossier d'investissement en prendre un coup car ces derniers ne savaient pas les répercussions sur le long terme de certaines de leurs décisions face au système.</p>
-                        <p>Aujourd'hui je suis Ingénieur Software Intégrateur dans une multinationale allemande, entrepreneur et investisseur dans diverses domaines tels l'immobilier, la bourse et bien d'autres secteurs d'activités.</p>
+                        <h3 style="color: #ffffff;">Mon expÃ©rience</h3>
+                        <p>ArrivÃ© en Allemagne il y a 12 ans pour faire mes Ã©tudes, j'ai dÃ» Ãªtre confrontÃ© Ã  l'intÃ©gration comme toute personne immigrant vers un pays nouveau.</p>
+                        <p>J'ai connu des personnes qui souhaitaient venir Ã©tudier, se former, ou retrouver leur conjoint mais qui ont eu des difficultÃ©s et ont vu leur dossier rejetÃ©s pour des raisons anticipables et Ã©vitables.</p>
+                        <p>J'ai vu des personnes voir leur dossier d'investissement en prendre un coup car ces derniers ne savaient pas les rÃ©percussions sur le long terme de certaines de leurs dÃ©cisions face au systÃ¨me.</p>
+                        <p>Aujourd'hui je suis IngÃ©nieur Software IntÃ©grateur dans une multinationale allemande, entrepreneur et investisseur dans diverses domaines tels l'immobilier, la bourse et bien d'autres secteurs d'activitÃ©s.</p>
                         <a href="about.html" class="btn btn-primary">En savoir plus sur moi</a>
                     </div>
                 </div>
@@ -171,27 +183,27 @@
     <div class="testimonials">
         <div class="container">
             <div class="section-title">
-                <h2 data-i18n="testimonialsSectionTitle">Témoignages de nos clients</h2>
-                <p data-i18n="testimonialsSectionSubtitle">Entendre parler du succès de ceux qui nous ont fait confiance</p>
+                <h2>TÃ©moignages de nos clients</h2>
+                <p>Entendre parler du succÃ¨s de ceux qui nous ont fait confiance</p>
             </div>
             
             <div class="row">
                 <div class="col-lg-4">
                     <div class="testimonial-card">
-                        <p data-i18n="testimonial1">"Grâce à StivMab, j'ai pu obtenir mon visa et ma première année en Allemagne s'est déroulée sans stress. L'équipe est vraiment professionnelle!"</p>
-                        <div class="testimonial-author" data-i18n="testimonial1Author">- Aïssatou K., Sénégal</div>
+                        <p>"GrÃ¢ce Ã  StivMab, j'ai pu obtenir mon visa et ma premiÃ¨re annÃ©e en Allemagne s'est dÃ©roulÃ©e sans stress. L'Ã©quipe est vraiment professionnelle!"</p>
+                        <div class="testimonial-author">- AÃ¯ssatou K., SÃ©nÃ©gal</div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="testimonial-card">
-                        <p data-i18n="testimonial2">"J'ai créé ma propre entreprise en Allemagne avec l'aide de leurs experts. Excellent accompagnement!"</p>
-                        <div class="testimonial-author" data-i18n="testimonial2Author">- Kwame M., Ghana</div>
+                        <p>"J'ai crÃ©Ã© ma propre entreprise en Allemagne avec l'aide de leurs experts. Excellent accompagnement!"</p>
+                        <div class="testimonial-author">- Kwame M., Ghana</div>
                     </div>
                 </div>
                 <div class="col-lg-4">
                     <div class="testimonial-card">
-                        <p data-i18n="testimonial3">"Le cours d'allemand m'a préparé non seulement linguistiquement mais aussi culturellement. Vraiment complet!"</p>
-                        <div class="testimonial-author" data-i18n="testimonial3Author">- Fatima B., Côte d'Ivoire</div>
+                        <p>"Le cours d'allemand m'a prÃ©parÃ© non seulement linguistiquement mais aussi culturellement. Vraiment complet!"</p>
+                        <div class="testimonial-author">- Fatima B., CÃ´te d'Ivoire</div>
                     </div>
                 </div>
             </div>
@@ -201,9 +213,9 @@
     <!-- CTA SECTION -->
     <div class="cta-section">
         <div class="container">
-            <h2 data-i18n="ctaTitle">Prêt à commencer votre aventure?</h2>
-            <p data-i18n="ctaDescription">Contactez-nous pour une consultation gratuite avec nos experts</p>
-            <a href="contact.html" class="btn btn-lg" data-i18n="ctaButton">Nous contacter</a>
+            <h2>PrÃªt Ã  commencer votre aventure?</h2>
+            <p>Contactez-nous pour une consultation gratuite avec nos experts</p>
+            <a href="contact.html" class="btn btn-lg">Nous contacter</a>
         </div>
     </div>
 
@@ -213,29 +225,29 @@
             <div class="row">
                 <div class="col-lg-4">
                     <h5><i class="fas fa-briefcase"></i> StivMab Consulting</h5>
-                    <p data-i18n="footerAbout">Votre partenaire pour réussir en Allemagne</p>
+                    <p>Votre partenaire pour rÃ©ussir en Allemagne</p>
                 </div>
                 <div class="col-lg-4">
-                    <h5 data-i18n="footerLinks">Liens rapides</h5>
+                    <h5>Liens rapides</h5>
                     <ul style="list-style: none; padding: 0;">
-                        <li><a href="index.html" data-i18n="footerHome">Accueil</a></li>
-                        <li><a href="services.html" data-i18n="footerServices">Services</a></li>
-                        <li><a href="about.html" data-i18n="footerAbout">À propos</a></li>
-                        <li><a href="contact.html" data-i18n="footerContact">Contact</a></li>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="about.html">Ã€ propos</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-4">
-                    <h5 data-i18n="footerContact">Contact</h5>
+                    <h5>Contact</h5>
                     <p>
                         <i class="fas fa-phone"></i> <a href="tel:+491234567890">+49 (0) 123 456789</a><br>
                         <i class="fas fa-envelope"></i> <a href="mailto:info@stivmab.de">info@stivmab.de</a><br>
-                        <i class="fas fa-map-marker-alt"></i> <span data-i18n="footerLocation">Berlin, Allemagne</span>
+                        <i class="fas fa-map-marker-alt"></i> <span>Berlin, Allemagne</span>
                     </p>
                 </div>
             </div>
             <hr style="border-color: #555;">
             <div class="text-center">
-                <p>&copy; 2024 StivMab Consulting. <span data-i18n="footerCopyright">Tous droits réservés.</span></p>
+                <p>&copy; 2024 StivMab Consulting. <span>Tous droits rÃ©servÃ©s.</span></p>
             </div>
         </div>
     </footer>
@@ -262,11 +274,11 @@
     i18next.on('languageChanged', (lng) => {
       localStorage.setItem('language', lng);
       const flags = { fr: 'france.png', en: 'united-kingdom.png', de: 'germany.png' };
-      const labels = { fr: 'Français', en: 'English', de: 'Deutsch' };
+      const labels = { fr: 'FranÃ§ais', en: 'English', de: 'Deutsch' };
       const img = document.querySelector('.lang_box img');
       const span = document.querySelector('.lang_box span');
       if (img) img.src = 'assets/images/' + (flags[lng] || 'france.png');
-      if (span) span.textContent = labels[lng] || 'Français';
+      if (span) span.textContent = labels[lng] || 'FranÃ§ais';
     });
 
     // Owl Carousel for testimonials
@@ -287,3 +299,4 @@
   </script>
 </body>
 </html>
+
