@@ -94,7 +94,7 @@
     
     .login-form-card .btn-submit {
       background-color: #FFD700;
-      color: #0f2a44;
+      color: #0f2a44 !important;
       border: none;
       font-weight: 700;
       padding: 12px 30px;
@@ -106,7 +106,14 @@
     
     .login-form-card .btn-submit:hover {
       background-color: #e6c200;
+      color: #0f2a44 !important;
       box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+    
+    .login-form-card .btn-submit:active,
+    .login-form-card .btn-submit:focus {
+      color: #0f2a44 !important;
+      background-color: #e6c200;
     }
     
     .login-form-card .links-section {
