@@ -22,6 +22,10 @@
   --text-light: #5a6c7d;
   --border-color: #d4d9e3;
   --hover-bg: #e8edf5;
+  --legacy-dark: #2c3e50;
+  --legacy-light: #f0f2f5;
+  --legacy-gold: #00B8D4;
+  --legacy-blue: #2c3e50;
 }
 
 /* ============================
@@ -36,6 +40,10 @@ body.dark-mode {
   --text-light: #b0b0b0;
   --border-color: #1a1f2e;
   --hover-bg: #1a1f2e;
+  --legacy-dark: #0B0E14;
+  --legacy-light: #ffffff;
+  --legacy-gold: #00F0FF;
+  --legacy-blue: #111111;
 }
 
 body {

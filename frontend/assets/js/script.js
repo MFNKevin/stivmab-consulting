@@ -6,14 +6,46 @@ const API_URL = "http://127.0.0.1:8000/coachings";
 ============================ */
 
 function initThemeToggle() {
+  console.log('Initializing theme toggle...');
+  
   const themeToggle = document.getElementById('themeToggle');
   const body = document.body;
   
+  if (!themeToggle) {
+    console.warn('Theme toggle button not found. Retrying...');
+    return false;
+  }
+  
   // Récupérer la préférence sauvegardée ou utiliser light comme défaut
   const savedTheme = localStorage.getItem('theme') || 'light';
+  console.log('Saved theme:', savedTheme);
   
   // Appliquer le thème sauvegardé
-  if (savedTheme === 'dark') {
+  applyTheme(savedTheme);
+  
+  // Ajouter l'événement de clic
+  themeToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    console.log('Toggle clicked');
+    const currentTheme = body.classList.contains('dark-mode') ? 'dark' : 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    applyTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+    console.log('Switched to', newTheme, 'mode');
+  });
+  
+  console.log('Theme toggle initialized successfully');
+  return true;
+}
+
+function applyTheme(theme) {
+  const body = document.body;
+  const themeToggle = document.getElementById('themeToggle');
+  
+  if (theme === 'dark') {
     body.classList.add('dark-mode');
     if (themeToggle) {
       themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
@@ -26,31 +58,31 @@ function initThemeToggle() {
       themeToggle.title = 'Passer au mode sombre';
     }
   }
-  
-  // Ajouter l'événement de clic
-  if (themeToggle) {
-    themeToggle.addEventListener('click', function() {
-      body.classList.toggle('dark-mode');
-      
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        themeToggle.title = 'Passer au mode clair';
-      } else {
-        localStorage.setItem('theme', 'light');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        themeToggle.title = 'Passer au mode sombre';
-      }
-    });
+}
+
+// Initialiser quand le DOM est prêt
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!initThemeToggle()) {
+      setTimeout(initThemeToggle, 200);
+    }
+  });
+} else {
+  // Si le DOM est déjà chargé
+  if (!initThemeToggle()) {
+    setTimeout(initThemeToggle, 200);
   }
 }
 
-// Initialiser le toggle dès que le DOM est prêt
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initThemeToggle);
-} else {
-  initThemeToggle();
-}
+// Triple vérification avec délai plus long
+setTimeout(function() {
+  const btn = document.getElementById('themeToggle');
+  if (btn && !btn.hasAttribute('data-initialized')) {
+    console.log('Triple check initialization...');
+    initThemeToggle();
+    btn.setAttribute('data-initialized', 'true');
+  }
+}, 1000);
 
 async function fetchCoachings() {
   try {
