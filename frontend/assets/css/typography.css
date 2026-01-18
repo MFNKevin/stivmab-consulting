@@ -1,0 +1,309 @@
+/* ============================
+   TYPOGRAPHY ENHANCEMENTS
+   Playfair Display pour titres, Crimson Text pour corps
+============================ */
+
+/* Body text - Crimson Text */
+body, p, span, li, dd, dt, blockquote {
+  font-family: 'Crimson Text', serif;
+}
+
+/* Headings - Playfair Display */
+h1, h2, h3, h4, h5, h6,
+.hero h1,
+.hero h1 span,
+.coaching-title,
+.service-card-title,
+.btn-primary-custom,
+.section-title h2,
+.heading_container h2,
+.pillar-card h3,
+.service-box h4,
+.cta-section h2,
+.cta-section h3,
+.cta_section h3,
+.about-text h3,
+.coaching_section h2,
+.formations_section .heading_container h2,
+.investments_section .heading_container h2,
+.investissement_section .heading_container h2,
+.why-section h2,
+.why_invest_section h2,
+.expertise-section h2,
+.testimonials .section-title h2,
+.service_section h2,
+.project_section h2,
+.info_section h5,
+.info_card h5,
+.coaching_section .card-title,
+.formations_section .card-title,
+.investissement_section .card-title,
+.investments_section .card-title,
+.box h3,
+.pillar-icon,
+.service-list-title,
+.business-subsection-title,
+.service-card-title,
+.testimonial-author {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+/* Strong emphasis - Playfair Display bold */
+strong, b, .font-weight-bold {
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+}
+
+/* Links - inherit from parent but maintain style */
+a {
+  font-family: 'Crimson Text', serif;
+}
+
+/* Form labels */
+label, .form-check-label {
+  font-family: 'Crimson Text', serif;
+  font-weight: 600;
+}
+
+/* Button text */
+button, .btn, input[type="button"], input[type="submit"] {
+  font-family: 'Crimson Text', serif;
+  font-weight: 700;
+}
+
+/* Card titles and important text */
+.card-title,
+.card-text,
+.modal-title {
+  font-family: 'Crimson Text', serif;
+}
+
+.card-title {
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Lists */
+ul, ol, li {
+  font-family: 'Crimson Text', serif;
+}
+
+/* Hero section specific */
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 3.5rem;
+}
+
+.hero h1 span {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 3.2rem;
+}
+
+.hero p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.25rem;
+  line-height: 1.8;
+}
+
+/* Section headings */
+.section-title h2,
+.heading_container h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+}
+
+.section-title p,
+.heading_container p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.125rem;
+}
+
+/* Testimonial styling */
+.testimonial-card p {
+  font-family: 'Crimson Text', serif;
+  font-style: italic;
+  font-size: 1rem;
+}
+
+/* Service cards */
+.service-card {
+  font-family: 'Crimson Text', serif;
+}
+
+.service-card-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.service-card-description {
+  font-family: 'Crimson Text', serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Contact section */
+.contact_section label {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+}
+
+.contact_section input,
+.contact_section textarea {
+  font-family: 'Crimson Text', serif;
+}
+
+/* Footer */
+.info_section p,
+.info_section a {
+  font-family: 'Crimson Text', serif;
+}
+
+.info_section h5 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+}
+
+/* About section */
+.about-text p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.about-text h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+/* Pillar cards */
+.pillar-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.pillar-card p {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9375rem;
+}
+
+/* CTA sections */
+.cta-section h3,
+.cta_section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.cta-section p,
+.cta_section p {
+  font-family: 'Crimson Text', serif;
+  font-size: 1.0625rem;
+}
+
+/* Info cards */
+.info_card h5 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.info_card p {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9375rem;
+}
+
+/* Box elements */
+.box h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.box p {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9375rem;
+}
+
+/* Service boxes */
+.service-box h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.service-box p {
+  font-family: 'Crimson Text', serif;
+  font-size: 0.9375rem;
+}
+
+/* Responsive adjustments for typography */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero h1 span {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1.0625rem;
+  }
+  
+  .section-title h2 {
+    font-size: 1.875rem;
+  }
+  
+  .coaching-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (max-width: 575px) {
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  body {
+    font-size: 15px;
+  }
+  
+  .hero h1 {
+    font-size: 1.875rem;
+  }
+  
+  .hero h1 span {
+    font-size: 1.75rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+}
