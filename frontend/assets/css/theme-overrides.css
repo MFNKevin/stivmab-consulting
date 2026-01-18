@@ -1,0 +1,551 @@
+/* ============================
+   THEME COLOR OVERRIDES
+   Ce fichier surcharge toutes les couleurs hardcodées avec les variables CSS
+   pour permettre un thème clair/sombre complet
+============================ */
+
+/* Topbar colors */
+.topbar a {
+  color: var(--legacy-gold) !important;
+}
+
+.topbar a:hover, .topbar a:focus {
+  color: var(--text-color) !important;
+  background-color: rgba(123, 44, 191, 0.1) !important;
+}
+
+/* Social box colors */
+.social_box a {
+  color: var(--legacy-gold) !important;
+}
+
+.social_box a:hover, .social_box a:focus {
+  color: var(--text-color) !important;
+  background-color: rgba(123, 44, 191, 0.15) !important;
+}
+
+/* Logo and language menu */
+.logo-dropdown img,
+.logo-link img {
+  border-color: var(--legacy-gold) !important;
+}
+
+.logo-dropdown img:hover, .logo-dropdown img:focus,
+.logo-link img:hover, .logo-link img:focus {
+  outline-color: var(--legacy-gold) !important;
+}
+
+.lang-menu {
+  background-color: var(--legacy-gold) !important;
+}
+
+.lang-menu li {
+  color: var(--legacy-dark) !important;
+}
+
+.lang-menu li:hover, .lang-menu li:focus {
+  background-color: var(--legacy-dark) !important;
+  color: var(--legacy-gold) !important;
+  outline-color: var(--legacy-dark) !important;
+}
+
+/* Login button */
+.btn-login {
+  background-color: var(--legacy-light) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-light) !important;
+}
+
+.btn-login:hover, .btn-login:focus {
+  background-color: var(--legacy-gold) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-dark) !important;
+  outline-color: var(--legacy-dark) !important;
+}
+
+/* Hero section - Button primary */
+.btn-primary-custom {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+  color: var(--primary-color) !important;
+}
+
+.btn-primary-custom:hover, .btn-primary-custom:focus {
+  background-color: var(--legacy-light) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-light) !important;
+}
+
+/* Service section */
+.service_section {
+  background-color: var(--legacy-dark) !important;
+}
+
+.service_section h2 {
+  color: var(--legacy-gold) !important;
+}
+
+.service_section p {
+  color: var(--text-light) !important;
+}
+
+.box {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.box:hover, .box:focus {
+  border-color: var(--legacy-light) !important;
+}
+
+.box h3 {
+  color: var(--legacy-gold) !important;
+}
+
+.box p {
+  color: var(--text-light) !important;
+}
+
+/* About preview */
+.about-preview {
+  background-color: var(--hover-bg) !important;
+}
+
+.section-title h2 {
+  color: var(--legacy-dark) !important;
+}
+
+.section-title p {
+  color: var(--text-light) !important;
+}
+
+.about-text h3 {
+  color: var(--legacy-dark) !important;
+}
+
+.about-text p {
+  color: var(--text-color) !important;
+}
+
+.about-image {
+  background: linear-gradient(135deg, var(--legacy-gold) 0%, #ffa500 100%) !important;
+  color: var(--legacy-dark) !important;
+}
+
+/* Pillar cards */
+.pillar-card {
+  background-color: var(--legacy-light) !important;
+  border-color: var(--legacy-gold) !important;
+  border-top-color: var(--legacy-gold) !important;
+}
+
+.pillar-card:hover, .pillar-card:focus {
+  border-color: var(--legacy-dark) !important;
+}
+
+.pillar-icon {
+  color: var(--legacy-gold) !important;
+}
+
+.pillar-card h3 {
+  color: var(--legacy-dark) !important;
+}
+
+.pillar-card p {
+  color: var(--text-color) !important;
+}
+
+.pillar-card li {
+  color: var(--legacy-dark) !important;
+}
+
+.pillar-card li:before {
+  color: var(--legacy-gold) !important;
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: var(--legacy-dark) !important;
+}
+
+.testimonial-card {
+  background-color: rgba(0, 184, 212, 0.05) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.testimonial-card:hover, .testimonial-card:focus {
+  border-color: var(--legacy-light) !important;
+}
+
+.testimonial-card p {
+  color: var(--text-light) !important;
+}
+
+.testimonial-author {
+  color: var(--legacy-gold) !important;
+}
+
+/* CTA section */
+.cta-section,
+.cta_section {
+  background: linear-gradient(135deg, var(--legacy-gold) 0%, #ffa500 100%) !important;
+  color: var(--legacy-dark) !important;
+  border-top-color: var(--legacy-dark) !important;
+  border-bottom-color: var(--legacy-dark) !important;
+}
+
+.cta-section h2,
+.cta-section h3,
+.cta_section h3 {
+  color: var(--legacy-dark) !important;
+}
+
+.cta-section p,
+.cta_section p {
+  color: #051628 !important;
+}
+
+.cta-section .btn,
+.cta_section .btn {
+  background-color: var(--legacy-dark) !important;
+  color: var(--legacy-gold) !important;
+  border-color: var(--legacy-dark) !important;
+}
+
+.cta-section .btn:hover, .cta-section .btn:focus,
+.cta_section .btn:hover, .cta_section .btn:focus {
+  background-color: #051628 !important;
+  color: var(--legacy-gold) !important;
+  border-color: #051628 !important;
+}
+
+/* Form elements */
+.contact_section .form-control {
+  background-color: rgba(123, 44, 191, 0.05) !important;
+  border-color: var(--legacy-gold) !important;
+  color: var(--text-color) !important;
+}
+
+.contact_section .form-control::placeholder {
+  color: var(--text-light) !important;
+}
+
+.contact_section .form-control:focus {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-light) !important;
+  color: var(--text-color) !important;
+  outline-color: var(--legacy-gold) !important;
+}
+
+.contact_section label {
+  color: var(--legacy-gold) !important;
+}
+
+.contact_section button {
+  background-color: var(--legacy-gold) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.contact_section button:hover, .contact_section button:focus {
+  background-color: var(--legacy-light) !important;
+  border-color: var(--legacy-dark) !important;
+}
+
+/* Footer */
+.info_section {
+  background-color: var(--legacy-dark) !important;
+  border-top-color: var(--legacy-gold) !important;
+}
+
+.info_section h5 {
+  color: var(--legacy-gold) !important;
+}
+
+.info_section p {
+  color: var(--text-light) !important;
+}
+
+.info_section a {
+  color: var(--legacy-gold) !important;
+}
+
+.info_section a:hover, .info_section a:focus {
+  color: var(--legacy-light) !important;
+}
+
+/* Coaching section */
+.coaching_section {
+  background-color: var(--legacy-dark) !important;
+}
+
+.coaching_section .card {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.coaching_section .card:hover {
+  border-color: var(--legacy-light) !important;
+}
+
+.coaching_section .card-title {
+  color: var(--legacy-gold) !important;
+}
+
+.coaching_section .card-text {
+  color: var(--text-light) !important;
+}
+
+/* Formations section */
+.formations_section {
+  background-color: var(--legacy-dark) !important;
+}
+
+.formations_section .heading_container h2 {
+  color: var(--legacy-gold) !important;
+}
+
+.formations_section .heading_container p {
+  color: var(--text-light) !important;
+}
+
+.formations_section .card {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.formations_section .card-title {
+  color: var(--legacy-gold) !important;
+}
+
+.formations_section .card-text {
+  color: var(--text-light) !important;
+}
+
+/* Buttons */
+.btn-primary,
+.btn.btn-primary,
+.btn-warning,
+.btn.btn-warning {
+  background-color: var(--legacy-gold) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.btn-primary:hover, .btn-primary:focus,
+.btn.btn-primary:hover, .btn.btn-primary:focus,
+.btn-warning:hover, .btn-warning:focus,
+.btn.btn-warning:hover, .btn.btn-warning:focus {
+  background-color: var(--legacy-light) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-light) !important;
+}
+
+/* Checkbox */
+.form-check-input {
+  border-color: var(--legacy-gold) !important;
+}
+
+.form-check-input:checked {
+  background-color: var(--legacy-gold) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.form-check-input:focus {
+  outline-color: var(--legacy-gold) !important;
+}
+
+.form-check-label {
+  color: var(--text-light) !important;
+}
+
+.form-check-label a {
+  color: var(--legacy-gold) !important;
+}
+
+/* Investments section */
+.investments_section,
+.investissement_section {
+  background-color: var(--legacy-dark) !important;
+}
+
+.investments_section .heading_container h2,
+.investissement_section .heading_container h2 {
+  color: var(--legacy-gold) !important;
+}
+
+.investments_section .heading_container p,
+.investissement_section .heading_container p {
+  color: var(--text-light) !important;
+}
+
+.investments_section .card,
+.investissement_section .card {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.investments_section .card-title,
+.investissement_section .card-title {
+  color: var(--legacy-gold) !important;
+}
+
+.investments_section .card-text,
+.investissement_section .card-text {
+  color: var(--text-light) !important;
+}
+
+/* Service boxes */
+.service-box {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.service-box:hover {
+  border-color: var(--legacy-light) !important;
+}
+
+.service-box h4 {
+  color: var(--legacy-gold) !important;
+}
+
+.service-box p {
+  color: var(--text-light) !important;
+}
+
+.service-box strong {
+  color: var(--legacy-light) !important;
+}
+
+/* Info cards */
+.info_card {
+  background-color: rgba(123, 44, 191, 0.1) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.info_card:hover {
+  border-color: var(--legacy-light) !important;
+}
+
+.info_card_icon {
+  background-color: rgba(0, 184, 212, 0.1) !important;
+  color: var(--legacy-gold) !important;
+}
+
+.info_card h5 {
+  color: var(--legacy-gold) !important;
+}
+
+.info_card p {
+  color: var(--text-light) !important;
+}
+
+.info_card a {
+  color: var(--legacy-gold) !important;
+}
+
+.info_card a:hover, .info_card a:focus {
+  color: var(--legacy-light) !important;
+}
+
+/* Owl carousel dots */
+.owl-dot {
+  background-color: var(--border-color) !important;
+}
+
+.owl-dot.active,
+.owl-dot:hover {
+  background-color: var(--legacy-gold) !important;
+}
+
+/* Why and expertise sections */
+.why-section,
+.why_invest_section,
+.expertise-section {
+  background-color: var(--legacy-dark) !important;
+}
+
+.why-section h2,
+.why_invest_section h2,
+.expertise-section h2 {
+  color: var(--legacy-gold) !important;
+}
+
+.why-section p,
+.why_invest_section p,
+.expertise-section p {
+  color: var(--text-light) !important;
+}
+
+.why_invest_section h5 {
+  color: var(--legacy-gold) !important;
+}
+
+.why_invest_section i {
+  color: var(--legacy-gold) !important;
+}
+
+/* Service card (coaching-specific) */
+.service-card {
+  background-color: var(--legacy-dark) !important;
+}
+
+.service-icon {
+  color: var(--legacy-gold) !important;
+}
+
+.service-card-title {
+  color: var(--legacy-gold) !important;
+}
+
+.service-card-description {
+  color: var(--text-light) !important;
+}
+
+/* Service content card */
+.service-content-card {
+  background-color: rgba(123, 44, 191, 0.05) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.service-content-card:hover {
+  border-color: var(--legacy-light) !important;
+}
+
+.service-list-title {
+  color: var(--legacy-gold) !important;
+}
+
+.service-list-description {
+  color: var(--text-light) !important;
+}
+
+/* Business list */
+.business-subsection-title {
+  color: var(--legacy-gold) !important;
+}
+
+.business-list li {
+  color: var(--text-light) !important;
+}
+
+.business-check {
+  color: var(--legacy-gold) !important;
+}
+
+/* Reserve session button */
+.btn-reserve-session {
+  background-color: var(--legacy-dark) !important;
+  color: var(--legacy-gold) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.btn-reserve-session:hover {
+  background-color: var(--legacy-gold) !important;
+  color: var(--legacy-dark) !important;
+  border-color: var(--legacy-gold) !important;
+}
+
+.btn-reserve-session:focus {
+  outline-color: var(--legacy-gold) !important;
+}
