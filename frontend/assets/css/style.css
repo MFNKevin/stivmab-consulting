@@ -1,5 +1,5 @@
 /* ============================
-   STYLES GLOBAUX
+   STYLES GLOBAUX - THÈME FUTURISTE NÉON
    Principes HCI appliqués :
    1. Visibilité : contraste WCAG AA minimum (4.5:1)
    2. Correspondance : langue claire et feedback explicites
@@ -9,26 +9,56 @@
    6. Reconnaissance : boutons clairs (visuellement distincts)
    7. Flexibilité : responsive, accessible clavier
 ============================ */
+
+/* ============================
+   CSS VARIABLES - LIGHT MODE (défaut)
+============================ */
+:root {
+  --primary-bg: #ffffff;
+  --primary-color: #111111;
+  --secondary-color: #00F0FF;
+  --accent-color: #9D00FF;
+  --text-color: #111111;
+  --text-light: #666666;
+  --border-color: #e0e0e0;
+  --hover-bg: #f5f5f5;
+}
+
+/* ============================
+   CSS VARIABLES - DARK MODE (futuriste)
+============================ */
+body.dark-mode {
+  --primary-bg: #0B0E14;
+  --primary-color: #111111;
+  --secondary-color: #00F0FF;
+  --accent-color: #9D00FF;
+  --text-color: #ffffff;
+  --text-light: #b0b0b0;
+  --border-color: #1a1f2e;
+  --hover-bg: #1a1f2e;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', Arial, sans-serif;
-  background-color: #0f2a44;
-  color: #ffffff;
+  background-color: var(--primary-bg);
+  color: var(--text-color);
   line-height: 1.6;
   font-size: 16px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {
   text-decoration: none;
-  color: #FFD700;
+  color: var(--secondary-color);
   transition: all 0.3s ease;
   outline: none;
 }
 
 a:hover, a:focus {
-  color: #ffffff;
+  color: var(--accent-color);
   text-decoration: underline;
-  outline: 2px solid #FFD700;
+  outline: 2px solid var(--accent-color);
 }
 
 /* Exception pour le logo - pas d'outline au hover */
@@ -38,7 +68,7 @@ a:hover, a:focus {
 
 /* Accessibilité : focus visible pour clavier */
 a:focus-visible {
-  outline: 3px solid #FFD700;
+  outline: 3px solid var(--accent-color);
   outline-offset: 2px;
 }
 
@@ -46,8 +76,68 @@ a:focus-visible {
    TOPBAR - Haute visibilité
 ============================ */
 .topbar {
-  background-color: #0a1f34;
-  border-bottom: 2px solid #FFD700;
+  background-color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  font-size: 15px;
+  color: var(--text-color);
+  padding: 12px 0;
+  box-shadow: 0 2px 8px rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.topbar a {
+  color: var(--secondary-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.topbar a:hover {
+  color: var(--accent-color);
+  background-color: rgba(157, 0, 255, 0.1);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.btn-theme-toggle:hover {
+  background-color: rgba(0, 240, 255, 0.15);
+  color: var(--accent-color);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.btn-theme-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.btn-theme-toggle i {
+  transition: transform 0.3s ease;
+}
   font-size: 15px;
   color: #ffffff;
   padding: 12px 0;
@@ -88,9 +178,10 @@ a:focus-visible {
    HEADER / NAVIGATION - Cohérence & Liberté
 ============================ */
 .header_bottom {
-  background-color: #0f2a44;
-  border-bottom: 3px solid #FFD700;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  background-color: var(--primary-color);
+  border-bottom: 3px solid var(--secondary-color);
+  box-shadow: 0 2px 15px rgba(0, 240, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
 .navbar {
@@ -113,7 +204,7 @@ a:focus-visible {
 }
 
 .nav-links a {
-  color: #FFD700;
+  color: var(--secondary-color);
   font-weight: 700;
   font-size: 16px;
   padding: 8px 12px;
@@ -126,15 +217,17 @@ a:focus-visible {
 }
 
 .nav-links a:hover, .nav-links a:focus {
-  color: #ffffff;
-  background-color: rgba(255, 215, 0, 0.15);
+  color: var(--accent-color);
+  background-color: rgba(157, 0, 255, 0.15);
   text-decoration: none;
-  outline: 2px solid #FFD700;
+  outline: 2px solid var(--accent-color);
+  box-shadow: 0 0 10px rgba(157, 0, 255, 0.3);
 }
 
 .nav-links a.active {
-  background-color: rgba(255, 215, 0, 0.2);
-  border-bottom: 3px solid #FFD700;
+  background-color: rgba(0, 240, 255, 0.2);
+  border-bottom: 3px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 /* Logo à gauche - Reconnaissance & Feedback */
@@ -152,10 +245,10 @@ a:focus-visible {
   width: 65px;
   display: block;
   border-radius: 50%;
-  border: 3px solid #FFD700;
+  border: 3px solid var(--secondary-color);
   object-fit: cover;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 2px 12px rgba(0, 240, 255, 0.3);
 }
 
 .logo-dropdown img:hover, .logo-dropdown img:focus {
@@ -294,27 +387,41 @@ a:focus-visible {
 .hero {
   text-align: center;
   padding: 120px 20px;
-  background: linear-gradient(135deg, #0f2a44 0%, #051628 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-bg) 100%);
+  color: var(--text-color);
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(135deg, #0B0E14 0%, #1a1f2e 100%);
+  border-top: 2px solid #00F0FF;
+  border-bottom: 2px solid #9D00FF;
 }
 
 .hero h1 {
   font-size: 48px;
   font-weight: 900;
   margin-bottom: 15px;
-  color: #ffffff;
+  color: var(--text-color);
   line-height: 1.2;
 }
 
 .hero h1 span {
-  color: #FFD700;
+  color: var(--secondary-color);
   display: block;
   font-size: 52px;
+  text-shadow: 0 0 20px rgba(0, 240, 255, 0.5);
+}
+
+body.dark-mode .hero h1 span {
+  text-shadow: 0 0 30px rgba(0, 240, 255, 0.6);
 }
 
 .hero p {
   font-size: 20px;
-  color: #e8f0f8;
+  color: var(--text-light);
   max-width: 800px;
   margin: 0 auto 30px;
   line-height: 1.6;
@@ -322,14 +429,17 @@ a:focus-visible {
 }
 
 .btn-primary-custom {
-  background-color: #FFD700;
-  color: #0f2a44;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 700;
   font-size: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
+  border: 2px solid var(--secondary-color);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
   display: inline-block;
   border: 2px solid #FFD700;
   min-height: 48px;

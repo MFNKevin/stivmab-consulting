@@ -1,6 +1,57 @@
 // URL de ton API FastAPI
 const API_URL = "http://127.0.0.1:8000/coachings";
 
+/* ============================
+   LIGHT/DARK MODE - THEME TOGGLE
+============================ */
+
+function initThemeToggle() {
+  const themeToggle = document.getElementById('themeToggle');
+  const body = document.body;
+  
+  // Récupérer la préférence sauvegardée ou utiliser light comme défaut
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  
+  // Appliquer le thème sauvegardé
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    if (themeToggle) {
+      themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      themeToggle.title = 'Passer au mode clair';
+    }
+  } else {
+    body.classList.remove('dark-mode');
+    if (themeToggle) {
+      themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      themeToggle.title = 'Passer au mode sombre';
+    }
+  }
+  
+  // Ajouter l'événement de clic
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+      body.classList.toggle('dark-mode');
+      
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        themeToggle.title = 'Passer au mode clair';
+      } else {
+        localStorage.setItem('theme', 'light');
+        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        themeToggle.title = 'Passer au mode sombre';
+      }
+    });
+  }
+}
+
+// Initialiser le toggle dès que le DOM est prêt
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initThemeToggle);
+} else {
+  initThemeToggle();
+}
+
 async function fetchCoachings() {
   try {
     const response = await fetch(API_URL);
