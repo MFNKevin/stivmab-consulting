@@ -14,36 +14,36 @@
    CSS VARIABLES - LIGHT MODE (défaut)
 ============================ */
 :root {
-  --primary-bg: #f0f2f5;
-  --primary-color: #2c3e50;
-  --secondary-color: #00B8D4;
-  --accent-color: #7B2CBF;
-  --text-color: #2c3e50;
-  --text-light: #5a6c7d;
-  --border-color: #d4d9e3;
-  --hover-bg: #e8edf5;
-  --legacy-dark: #2c3e50;
-  --legacy-light: #f0f2f5;
-  --legacy-gold: #00B8D4;
-  --legacy-blue: #2c3e50;
+  --primary-bg: #f7f5f0;
+  --primary-color: #f0e8dd;
+  --secondary-color: #c9893e;
+  --accent-color: #c9893e;
+  --text-color: #1f1a17;
+  --text-light: #4a4036;
+  --border-color: #e3d9cc;
+  --hover-bg: #f1ece4;
+  --legacy-dark: #1f1a17;
+  --legacy-light: #f7f5f0;
+  --legacy-gold: #c9893e;
+  --legacy-blue: #1f1a17;
 }
 
 /* ============================
-   CSS VARIABLES - DARK MODE (futuriste)
+   CSS VARIABLES - DARK MODE (classique or/bleu foncé)
 ============================ */
 body.dark-mode {
-  --primary-bg: #0B0E14;
-  --primary-color: #111111;
-  --secondary-color: #00F0FF;
-  --accent-color: #9D00FF;
-  --text-color: #ffffff;
-  --text-light: #b0b0b0;
-  --border-color: #1a1f2e;
-  --hover-bg: #1a1f2e;
-  --legacy-dark: #0B0E14;
-  --legacy-light: #ffffff;
-  --legacy-gold: #00F0FF;
-  --legacy-blue: #111111;
+  --primary-bg: #1a2a3a;
+  --primary-color: #0f1620;
+  --secondary-color: #d4af37;
+  --accent-color: #8b7500;
+  --text-color: #f0e6d2;
+  --text-light: #d4c5b0;
+  --border-color: #2a3a4a;
+  --hover-bg: #253545;
+  --legacy-dark: #1a2a3a;
+  --legacy-light: #f0e6d2;
+  --legacy-gold: #d4af37;
+  --legacy-blue: #0f1620;
 }
 
 body {
@@ -196,7 +196,7 @@ a:focus-visible {
   font-size: 15px;
   color: #ffffff;
   padding: 12px 0;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 8px rgba(31,26,23,0.22);
 }
 
 .topbar a {
@@ -342,7 +342,7 @@ a:focus-visible {
   padding: 8px 0;
   margin: 0;
   min-width: 120px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 16px rgba(31,26,23,0.22);
   z-index: 1000;
 }
 
@@ -450,9 +450,9 @@ a:focus-visible {
 }
 
 body.dark-mode .hero {
-  background: linear-gradient(135deg, #0B0E14 0%, #1a1f2e 100%);
-  border-top: 2px solid #00F0FF;
-  border-bottom: 2px solid #9D00FF;
+  background: linear-gradient(135deg, var(--primary-bg) 0%, var(--primary-color) 100%);
+  border-top: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .hero h1 {
@@ -539,7 +539,7 @@ body.dark-mode .hero h1 span {
   border-radius: 12px;
   padding: 25px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(31,26,23,0.18);
 }
 
 .box:hover, .box:focus {
@@ -609,7 +609,7 @@ body.dark-mode .hero h1 span {
   color: #0f2a44;
   font-size: 18px;
   font-weight: 700;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 24px rgba(31,26,23,0.14);
 }
 
 .about-image i {
@@ -635,7 +635,7 @@ body.dark-mode .hero h1 span {
   background-color: #ffffff;
   border-radius: 12px;
   padding: 30px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(31,26,23,0.12);
   border: 3px solid #FFD700;
   transition: all 0.3s ease;
   min-height: 100%;
@@ -643,7 +643,7 @@ body.dark-mode .hero h1 span {
 
 .pillar-card:hover, .pillar-card:focus {
   transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+  box-shadow: 0 12px 28px rgba(31,26,23,0.14);
   border-color: #0f2a44;
 }
 
@@ -1115,70 +1115,53 @@ body.dark-mode .hero h1 span {
 /* ============================
    WHY SECTION & EXPERTISE SECTION
 ============================ */
-.why-section {
-  background-color: #0f2a44;
-  padding: 60px 20px;
-}
-
-.why-section h2 {
-  color: #FFD700;
-  font-weight: 900;
-  font-size: 36px;
-  margin-bottom: 30px;
-}
-
-.why-section p {
-  color: #e8f0f8;
-  font-size: 16px;
-  line-height: 1.8;
-}
-
+.why-section,
 .expertise-section {
-  background-color: #1a3f5a;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f0e6 100%);
   padding: 60px 20px;
 }
 
+.why-section h2,
 .expertise-section h2 {
-  color: #FFD700;
+  color: var(--secondary-color);
   font-weight: 900;
   font-size: 36px;
   margin-bottom: 30px;
 }
 
+.why-section p,
 .expertise-section p {
-  color: #e8f0f8;
-  font-size: 18px;
+  color: var(--text-color);
+  font-size: 17px;
   line-height: 1.8;
 }
 
 .service-box {
-  background: #1a3f5a;
-  border: 2px solid #FFD700;
-  border-radius: 10px;
+  background: #ffffff;
+  border: 2px solid var(--secondary-color);
+  border-radius: 12px;
   padding: 20px;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(31,26,23,0.12);
 }
 
 .service-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
-  border-color: #ffffff;
+  box-shadow: 0 16px 32px rgba(31,26,23,0.16);
+  border-color: var(--accent-color);
 }
 
 .service-box h4 {
-  color: #FFD700;
+  color: var(--secondary-color);
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.service-box p {
-  color: #e8f0f8;
-  line-height: 1.6;
-  margin-bottom: 10px;
-}
-
+.service-box p,
 .service-box strong {
-  color: #ffffff;
+  color: var(--text-color);
+  line-height: 1.65;
+  margin-bottom: 10px;
 }
 
 .service-box .btn,
@@ -1256,30 +1239,32 @@ body.dark-mode .hero h1 span {
 }
 
 /* Coaching Section - Vidéos responsive */
+
 .coaching_section {
-  background-color: #0f2a44;
+  background-color: var(--primary-bg);
   padding: 60px 20px;
 }
 
 .coaching_section h2 {
-  color: #FFD700;
+  color: var(--secondary-color);
   font-weight: 900;
   font-size: 36px;
   margin-bottom: 30px;
 }
 
 .coaching_section .card {
-  background-color: #1a3f5a !important;
-  border: 2px solid #FFD700 !important;
+  background-color: #ffffff !important;
+  border: 2px solid var(--secondary-color) !important;
   border-radius: 12px !important;
   transition: all 0.3s ease;
   overflow: hidden;
+  box-shadow: 0 10px 24px rgba(31,26,23,0.12) !important;
 }
 
 .coaching_section .card:hover {
   transform: translateY(-8px);
-  border-color: #ffffff !important;
-  box-shadow: 0 12px 28px rgba(255, 215, 0, 0.2) !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: 0 16px 32px rgba(31,26,23,0.16) !important;
 }
 
 .coaching_section iframe {
@@ -1290,50 +1275,45 @@ body.dark-mode .hero h1 span {
 }
 
 .coaching_section .card-body {
-  background-color: #1a3f5a !important;
+  background-color: #ffffff !important;
 }
 
 .coaching_section .card-title {
-  color: #FFD700 !important;
+  color: var(--text-color) !important;
   font-weight: 800 !important;
   font-size: 18px !important;
 }
 
 .coaching_section .card-text {
-  color: #e8f0f8 !important;
-  font-size: 14px !important;
+  color: var(--text-color) !important;
+  font-size: 15px !important;
 }
 
 /* Improve contrast for coaching service descriptions */
 .coaching_section .card p,
 .coaching_section .card li p,
-.coaching_section .card ul li {
-  color: #e8f0f8 !important;
+.coaching_section .card ul li,
+.coaching_section .service-card p,
+.coaching_section .service-card h4 {
+  color: var(--text-color) !important;
 }
 
 .coaching_section .card strong,
 .coaching_section .card h5,
-.coaching_section .card .card-title {
-  color: #FFD700 !important;
-}
-
-.coaching_section .service-card p,
-.coaching_section .service-card h4 {
-  color: #e8f0f8 !important;
-}
-
+.coaching_section .card .card-title,
 .coaching_section .service-card i {
-  color: #FFD700 !important;
+  color: var(--secondary-color) !important;
 }
 
 /* Investment Section - Programmes d'investissement */
+
 .investments_section {
-  background-color: #0f2a44;
+  background-color: var(--primary-bg);
   padding: 60px 20px;
 }
 
 .investments_section .heading_container h2 {
-  color: #FFD700;
+  color: var(--secondary-color);
   font-weight: 900;
   font-size: 36px;
   margin-bottom: 15px;
@@ -1704,31 +1684,34 @@ body.dark-mode .hero h1 span {
 .service-card {
   padding: 30px 20px;
   border-radius: 12px;
-  color: white;
+  color: var(--text-color);
   text-align: center;
   min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #ffffff 0%, #f3e9dc 100%);
+  border: 1px solid var(--secondary-color);
+  box-shadow: 0 4px 14px rgba(31,26,23,0.14);
 }
 
 .service-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
+  border-color: var(--stiv-accent);
+  box-shadow: 0 10px 28px rgba(31,26,23,0.16);
 }
 
 .service-card-immigration {
-  background: linear-gradient(135deg, var(--stiv-primary) 0%, #1a3f5a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e9ddcb 100%);
 }
 
 .service-card-integration {
-  background: linear-gradient(135deg, #1a3f5a 0%, var(--stiv-primary) 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e6d7c4 100%);
 }
 
 .service-card-business {
-  background: linear-gradient(135deg, var(--stiv-primary) 0%, #051628 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e3d1ba 100%);
 }
 
 .service-icon {
@@ -1752,17 +1735,18 @@ body.dark-mode .hero h1 span {
 
 /* Service Content Cards - Cartes de contenu */
 .service-content-card {
-  background-color: rgba(28, 47, 79, 0.6);
-  border: 2px solid var(--stiv-accent);
+  background: linear-gradient(135deg, #ffffff 0%, #f4ece1 100%);
+  border: 1px solid var(--secondary-color);
   border-radius: 12px;
   padding: 30px 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  color: var(--text-color);
+  box-shadow: 0 4px 14px rgba(31,26,23,0.14);
   transition: all 0.3s ease;
 }
 
 .service-content-card:hover {
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15);
-  border-color: #ffffff;
+  border-color: var(--stiv-accent);
+  box-shadow: 0 10px 28px rgba(31,26,23,0.16);
 }
 
 /* Service Lists */

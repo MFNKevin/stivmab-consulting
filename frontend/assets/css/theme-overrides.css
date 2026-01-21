@@ -78,28 +78,28 @@
 
 /* Service section */
 .service_section {
-  background-color: var(--legacy-dark) !important;
+  background-color: var(--primary-bg) !important;
 }
 
 .service_section h2 {
-  color: var(--legacy-gold) !important;
+  color: var(--accent-color) !important;
 }
 
 .service_section p {
-  color: var(--text-light) !important;
+  color: var(--text-color) !important;
 }
 
 .box {
-  background-color: rgba(123, 44, 191, 0.1) !important;
-  border-color: var(--legacy-gold) !important;
+  background-color: #ffffff !important;
+  border-color: var(--secondary-color) !important;
 }
 
 .box:hover, .box:focus {
-  border-color: var(--legacy-light) !important;
+  border-color: var(--accent-color) !important;
 }
 
 .box h3 {
-  color: var(--legacy-gold) !important;
+  color: var(--text-color) !important;
 }
 
 .box p {
@@ -165,64 +165,64 @@
 
 /* Testimonials */
 .testimonials {
-  background-color: var(--legacy-dark) !important;
+  background-color: var(--primary-bg) !important;
 }
 
 .testimonial-card {
-  background-color: rgba(0, 184, 212, 0.05) !important;
-  border-color: var(--legacy-gold) !important;
+  background-color: #ffffff !important;
+  border-color: var(--secondary-color) !important;
 }
 
 .testimonial-card:hover, .testimonial-card:focus {
-  border-color: var(--legacy-light) !important;
+  border-color: var(--accent-color) !important;
 }
 
 .testimonial-card p {
-  color: var(--text-light) !important;
+  color: var(--text-color) !important;
 }
 
 .testimonial-author {
-  color: var(--legacy-gold) !important;
+  color: var(--accent-color) !important;
 }
 
 /* CTA section */
 .cta-section,
 .cta_section {
-  background: linear-gradient(135deg, var(--legacy-gold) 0%, #ffa500 100%) !important;
-  color: var(--legacy-dark) !important;
-  border-top-color: var(--legacy-dark) !important;
-  border-bottom-color: var(--legacy-dark) !important;
+  background: linear-gradient(135deg, var(--secondary-color) 0%, #e9d5b8 100%) !important;
+  color: var(--text-color) !important;
+  border-top-color: var(--secondary-color) !important;
+  border-bottom-color: var(--secondary-color) !important;
 }
 
 .cta-section h2,
 .cta-section h3,
 .cta_section h3 {
-  color: var(--legacy-dark) !important;
+  color: var(--text-color) !important;
 }
 
 .cta-section p,
 .cta_section p {
-  color: #051628 !important;
+  color: var(--text-light) !important;
 }
 
 .cta-section .btn,
 .cta_section .btn {
-  background-color: var(--legacy-dark) !important;
-  color: var(--legacy-gold) !important;
-  border-color: var(--legacy-dark) !important;
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--accent-color) !important;
 }
 
 .cta-section .btn:hover, .cta-section .btn:focus,
 .cta_section .btn:hover, .cta_section .btn:focus {
-  background-color: #051628 !important;
-  color: var(--legacy-gold) !important;
-  border-color: #051628 !important;
+  background-color: var(--hover-bg) !important;
+  color: var(--text-color) !important;
+  border-color: var(--accent-color) !important;
 }
 
 /* Form elements */
 .contact_section .form-control {
-  background-color: rgba(123, 44, 191, 0.05) !important;
-  border-color: var(--legacy-gold) !important;
+  background-color: #ffffff !important;
+  border-color: var(--secondary-color) !important;
   color: var(--text-color) !important;
 }
 
@@ -231,31 +231,31 @@
 }
 
 .contact_section .form-control:focus {
-  background-color: rgba(123, 44, 191, 0.1) !important;
-  border-color: var(--legacy-light) !important;
+  background-color: var(--hover-bg) !important;
+  border-color: var(--accent-color) !important;
   color: var(--text-color) !important;
-  outline-color: var(--legacy-gold) !important;
+  outline-color: var(--accent-color) !important;
 }
 
 .contact_section label {
-  color: var(--legacy-gold) !important;
+  color: var(--accent-color) !important;
 }
 
 .contact_section button {
-  background-color: var(--legacy-gold) !important;
-  color: var(--legacy-dark) !important;
-  border-color: var(--legacy-gold) !important;
+  background-color: var(--accent-color) !important;
+  color: var(--text-color) !important;
+  border-color: var(--accent-color) !important;
 }
 
 .contact_section button:hover, .contact_section button:focus {
-  background-color: var(--legacy-light) !important;
-  border-color: var(--legacy-dark) !important;
+  background-color: var(--hover-bg) !important;
+  border-color: var(--accent-color) !important;
 }
 
 /* Footer */
 .info_section {
-  background-color: var(--legacy-dark) !important;
-  border-top-color: var(--legacy-gold) !important;
+  background-color: var(--primary-color) !important;
+  border-top-color: var(--secondary-color) !important;
 }
 
 .info_section h5 {

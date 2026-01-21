@@ -17,9 +17,15 @@
   <!-- Font Awesome (CDN) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet"/>
 
+  <!-- Dynamic Theme Stylesheet -->
+  <script>
+    const theme = localStorage.getItem('theme') || 'light';
+    const cssFile = theme === 'dark' ? 'style-dark.css' : 'style-light.css';
+    document.write('<link href="assets/css/' + cssFile + '" rel="stylesheet" />');
+  </script>
+
   <!-- Your main stylesheet -->
   <link href="assets/css/theme.css" rel="stylesheet" />
-  <link href="assets/css/style.css" rel="stylesheet" />
   <link href="assets/css/theme-overrides.css" rel="stylesheet" />
   <link href="assets/css/typography.css" rel="stylesheet" />
   <link href="assets/css/responsive-forms.css" rel="stylesheet" />
@@ -32,6 +38,36 @@
 </head>
 
 <body>
+
+  <script>
+    // Initialize theme on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    
+    // Listen for theme toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        // Set initial icon
+        const isDark = document.body.classList.contains('dark-mode');
+        btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        
+        // Attach click listener
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          if (typeof updateThemeLogo === 'function') updateThemeLogo();
+          location.reload();
+        }, true);
+      }
+    });
+  </script>
+
   <!-- TOPBAR -->
   <div class="topbar py-2">
     <div class="container d-flex justify-content-between align-items-center">
@@ -67,7 +103,7 @@
     <div class="container">
       <nav class="navbar navbar-expand-lg custom_nav-container">
         <a href="index.html" class="logo-link">
-          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+          <img id="theme-logo" src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
         </a>
 
         <!-- Bouton hamburger -->
@@ -92,10 +128,10 @@
   </div>
 
   <!-- ======= HERO SECTION ======= -->
-  <section class="hero py-5" style="background-color: #1a3f5a;">
-    <div class="container text-white">
-      <h1 style="color: #FFD700;">À Propos de Steve Nghotue</h1>
-      <p style="font-size: 1.2rem; margin-top: 15px;">Découvrez mon histoire et ma mission</p>
+  <section class="hero py-5">
+    <div class="container">
+      <h1>À Propos de Steve Nghotue</h1>
+      <p>Découvrez mon histoire et ma mission</p>
     </div>
   </section>
 
@@ -109,19 +145,19 @@
         </div>
         <div class="col-lg-8">
           <h2 style="color: #FFD700; margin-bottom: 20px;">Qui est Steve Nghotue?</h2>
-          <p style="color: #ffffff; font-size: 1rem; line-height: 1.8;">
+          <p style="color: var(--text-color); font-size: 1rem; line-height: 1.8;">
             <strong>Steve Nghotue</strong> est un jeune entrepreneur camerounais <strong>multilingue</strong>, passionne du sport et du savoir. Arrive en Allemagne en <strong>2012</strong> pour poursuivre ses etudes, il s'est rapidement adapte au systeme educatif allemand et a acquis une comprehension approfondie des processus d'integration et d'immigration.
           </p>
-          <p style="color: #ffffff; font-size: 1rem; line-height: 1.8; margin-top: 15px;">
+          <p style="color: var(--text-color); font-size: 1rem; line-height: 1.8; margin-top: 15px;">
             Aujourd'hui, Steve est :
           </p>
-          <ul style="color: #ffffff; font-size: 0.95rem; line-height: 1.8; margin-left: 20px;">
+          <ul style="color: var(--text-color); font-size: 0.95rem; line-height: 1.8; margin-left: 20px;">
             <li><strong>Ingenieur Logiciel Integrateu</strong> dans une grande multinationale allemande</li>
             <li><strong>Entrepreneur</strong> a part entiere avec plusieurs activites</li>
             <li><strong>Investisseur</strong> dans plusieurs domaines : immobilier, bourse, et technologies</li>
             <li><strong>Mentor</strong> et guide pour la communaute africaine</li>
           </ul>
-          <p style="color: #ffffff; font-size: 1rem; line-height: 1.8; margin-top: 15px;">
+          <p style="color: var(--text-color); font-size: 1rem; line-height: 1.8; margin-top: 15px;">
             Fort de son experience personnelle reussie en Allemagne, Steve a decide de <strong>transformer ses succes et mettre ses competences au service des autres</strong>.
           </p>
         </div>
@@ -130,10 +166,10 @@
       <!-- SECTION 2: QUELLE EST SA MISSION? -->
       <div class="row mt-5 mb-5">
         <div class="col-12">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-left: 5px solid #FFD700; background-color: rgba(255, 215, 0, 0.05);">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(31,26,23,0.12); border-left: 5px solid #FFD700; background-color: rgba(255, 215, 0, 0.05);">
             <div class="card-body">
               <h3 style="color: #FFD700; margin-bottom: 20px;">Quelle est sa mission?</h3>
-              <p style="color: #ffffff; font-size: 1rem; line-height: 1.8;">
+              <p style="color: var(--text-color); font-size: 1rem; line-height: 1.8;">
                 <strong>Accompagner, conseiller et coacher</strong> d'autres jeunes de la communaute africaine desirant <strong>s'integrer et investir en Allemagne</strong> en construisant un veritable patrimoine.
               </p>
               <p style="color: #FFD700; font-size: 0.95rem; line-height: 1.8; margin-top: 15px; margin-left: 20px; padding-left: 15px; border-left: 3px solid #FFD700; font-style: italic;">
@@ -153,10 +189,10 @@
 
       <div class="row">
         <div class="col-lg-6 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(31,26,23,0.12); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
             <div class="card-body">
               <h5 style="color: #FFD700; margin-bottom: 15px;"><i class="fas fa-lightbulb mr-2"></i> Demystifier le processus</h5>
-              <p style="color: #ffffff; font-size: 0.95rem; line-height: 1.7;">
+              <p style="color: var(--text-color); font-size: 0.95rem; line-height: 1.7;">
                 Rendre simple et comprehensible le processus de voyage et d'integration en Allemagne pour tous
               </p>
             </div>
@@ -164,10 +200,10 @@
         </div>
 
         <div class="col-lg-6 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(31,26,23,0.12); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
             <div class="card-body">
               <h5 style="color: #FFD700; margin-bottom: 15px;"><i class="fas fa-share-alt mr-2"></i> Partager les connaissances</h5>
-              <p style="color: #ffffff; font-size: 0.95rem; line-height: 1.7;">
+              <p style="color: var(--text-color); font-size: 0.95rem; line-height: 1.7;">
                 Partager ses connaissances et experiences pour aider des millions de personnes
               </p>
             </div>
@@ -175,10 +211,10 @@
         </div>
 
         <div class="col-lg-6 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(31,26,23,0.12); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
             <div class="card-body">
               <h5 style="color: #FFD700; margin-bottom: 15px;"><i class="fas fa-users mr-2"></i> Servir de mentor</h5>
-              <p style="color: #ffffff; font-size: 0.95rem; line-height: 1.7;">
+              <p style="color: var(--text-color); font-size: 0.95rem; line-height: 1.7;">
                 Servir de mentor et guide pour les prochaines generations d'entrepreneurs et migrants
               </p>
             </div>
@@ -186,10 +222,10 @@
         </div>
 
         <div class="col-lg-6 mb-4">
-          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.1); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
+          <div class="card h-100" style="border: none; box-shadow: 0 4px 8px rgba(31,26,23,0.12); border-top: 5px solid #FFD700; background: rgba(15, 42, 68, 0.05);">
             <div class="card-body">
               <h5 style="color: #FFD700; margin-bottom: 15px;"><i class="fas fa-chart-line mr-2"></i> Contribuer au developpement</h5>
-              <p style="color: #ffffff; font-size: 0.95rem; line-height: 1.7;">
+              <p style="color: var(--text-color); font-size: 0.95rem; line-height: 1.7;">
                 Contribuer au developpement personnel, economique et social de la communaute
               </p>
             </div>
@@ -209,29 +245,29 @@
   </section>
 
   <!-- ======= FOOTER ======= -->
-  <footer class="py-4" style="background-color: #333; color: #fff;">
+  <footer class="py-4" style="background-color: #333 !important; color: #fff !important;">
     <div class="container">
       <div class="row">
         <div class="col-md-4 mb-3">
-          <h5>StivMab Consulting</h5>
-          <p>Votre partenaire pour une carrière réussie Ã  l'étranger.</p>
+          <h5 style="color: #fff !important;">StivMab Consulting</h5>
+          <p style="color: #fff !important;">Votre partenaire pour une carrière réussie Ã  l'étranger.</p>
         </div>
         <div class="col-md-4 mb-3">
-          <h5>Liens rapides</h5>
+          <h5 style="color: #fff !important;">Liens rapides</h5>
           <ul class="list-unstyled">
-            <li><a href="index.html" class="text-white">Accueil</a></li>
-            <li><a href="coaching.html" class="text-white">Coaching</a></li>
-            <li><a href="contact.html" class="text-white">Contact</a></li>
+            <li><a href="index.html" class="text-white" style="color: #fff !important;">Accueil</a></li>
+            <li><a href="coaching.html" class="text-white" style="color: #fff !important;">Coaching</a></li>
+            <li><a href="contact.html" class="text-white" style="color: #fff !important;">Contact</a></li>
           </ul>
         </div>
         <div class="col-md-4 mb-3">
-          <h5>Contact</h5>
-          <p>Email: <a href="mailto:Stevemab@gmail.com" class="text-white">Stevemab@gmail.com</a></p>
-          <p>Tel: <a href="tel:+01123455678990" class="text-white">+01 123 455 678 990</a></p>
+          <h5 style="color: #fff !important;">Contact</h5>
+          <p style="color: #fff !important;">Email: <a href="mailto:Stevemab@gmail.com" class="text-white" style="color: #fff !important;">Stevemab@gmail.com</a></p>
+          <p style="color: #fff !important;">Tel: <a href="tel:+01123455678990" class="text-white" style="color: #fff !important;">+01 123 455 678 990</a></p>
         </div>
       </div>
       <hr class="bg-light" />
-      <p class="text-center mb-0">&copy; 2024 StivMab Consulting. Tous droits réservés.</p>
+      <p class="text-center mb-0" style="color: #fff !important;">&copy; 2024 StivMab Consulting. Tous droits réservés.</p>
     </div>
   </footer>
 

@@ -27,12 +27,10 @@
 
 
 
-
   <!-- Google Fonts -->
 
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Crimson+Text:wght@400;600;700&display=swap" rel="stylesheet">
-
 
 
 
@@ -45,7 +43,6 @@
 
 
 
-
   <!-- Font Awesome (CDN) -->
 
 
@@ -54,14 +51,18 @@
 
 
 
+  <!-- Dynamic Theme Stylesheet -->
+  <script>
+    const theme = localStorage.getItem('theme') || 'light';
+    const cssFile = theme === 'dark' ? 'style-dark.css' : 'style-light.css';
+    document.write('<link href="assets/css/' + cssFile + '" rel="stylesheet" />');
+  </script>
+
 
   <!-- Your main stylesheet -->
 
 
   <link href="assets/css/theme.css" rel="stylesheet" />
-
-
-  <link href="assets/css/style.css" rel="stylesheet" />
 
   <link href="assets/css/theme-overrides.css" rel="stylesheet" />
 
@@ -71,7 +72,6 @@
 
 
   <link href="assets/css/hamburger-menu.css" rel="stylesheet" />
-
 
 
 
@@ -93,86 +93,65 @@
 
 
 
-
 <body>
 
+  <script>
+    // Initialize theme on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    
+    // Listen for theme toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        // Set initial icon
+        const isDark = document.body.classList.contains('dark-mode');
+        btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        
+        // Attach click listener
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          if (typeof updateThemeLogo === 'function') updateThemeLogo();
+          location.reload();
+        }, true);
+      }
+    });
+  </script>
 
   <!-- ======= TOPBAR ======= -->
-
-
   <div class="topbar py-2">
-
-
     <div class="container d-flex justify-content-between align-items-center">
-
-
       <div class="d-flex align-items-center">
-
-
         <div class="social_box">
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
-
-
-          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-
-
+          <a href="#" class="mr-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="mr-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="mr-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
-
-
       </div>
-
-
       <div class="d-flex align-items-center">
-
-
         <div class="contact_nav d-none d-md-flex mr-3">
-
-
-          <a href="tel:+01123455678990"><i class="fa fa-phone"></i><span class="ml-1">+01 123455678990</span></a>
-
-
-          <a href="mailto:Stevemab@gmail.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">Stevemab@gmail.com</span></a>
-
-
+          <a href="tel:+33612345678"><i class="fa fa-phone"></i><span class="ml-1">+33 6 12 34 56 78</span></a>
+          <a href="mailto:contact@stivmab.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">contact@stivmab.com</span></a>
         </div>
-
-
         <div class="theme-toggle mr-3">
           <button id="themeToggle" class="btn-theme-toggle" title="Toggle dark mode">
             <i class="fas fa-moon"></i>
           </button>
         </div>
-
-
         <div class="lang_box d-flex align-items-center">
-
-
           <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
-
-
           <span>Français</span>
-
-
         </div>
-
-
       </div>
-
-
     </div>
-
-
   </div>
-
-
 
 
 
@@ -186,6 +165,17 @@
 
 
       <nav class="navbar navbar-expand-lg custom_nav-container">
+
+
+        <a href="index.html" class="logo-link">
+
+
+          <img id="theme-logo" src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+
+
+        </a>
+
+
 
 
         <!-- Bouton hamburger -->
@@ -204,20 +194,6 @@
 
 
         </button>
-
-
-
-
-
-        <a href="index.html" class="logo-link">
-
-
-          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
-
-
-        </a>
-
-
 
 
 
@@ -260,104 +236,31 @@
   </div>
 
 
-
-
   <!-- ======= HERO SECTION ======= -->
-  <section class="hero py-5" style="background-color: #1a3f5a;">
-    <div class="container text-white">
-      <h1 style="color: #FFD700;">Services de Coaching et Accompagnement</h1>
-      <p style="font-size: 1.2rem; margin-top: 15px;">Développe tes compétences et construis ta vie professionnelle avec mon accompagnement personnalisé</p>
+  <section class="hero py-5">
+    <div class="container">
+      <h1>Services de Coaching et Accompagnement</h1>
+      <p>Développe tes compétences et construis ta vie professionnelle avec mon accompagnement personnalisé</p>
     </div>
   </section>
 
 
 
-
   <!-- ======= SECTION COACHINGS ======= -->
-
-
   <section class="coaching_section py-5">
-
-
     <div class="container">
-
-
       <div class="heading_container text-center mb-5">
-
-
         <h2 class="coaching-title">Mes Services de Coaching et Accompagnement</h2>
-
-
         <p class="coaching-subtitle">
-
-
           Produits pour te développer et construire ta vie sociale, professionnelle et entrepreneuriale
-
-
         </p>
-
-
-        <!-- Phrase accrocheuse -->
-
-
         <p class="coaching-cta">
-
-
           Essayez votre première séance gratuitement ! Aucun risque, commencez dès maintenant.
-
-
         </p>
-
-
       </div>
 
 
-
-
-
       <!-- IMMIGRATION SERVICES -->
-
-
-      <div class="row mb-5">
-
-
-        <div class="col-12 col-md-6 col-lg-4 mb-3 order-lg-2">
-
-
-          <div class="service-card service-card-immigration">
-
-
-            <i class="fas fa-passport service-icon"></i>
-
-
-            <h4 class="service-card-title">Service Immigration</h4>
-
-
-            <p class="service-card-description">
-
-
-              Accompagnement complet pour naviguer les processus d'immigration en Allemagne
-
-
-            </p>
-
-
-          </div>
-
-
-        </div>
-
-
-        <div class="col-12 col-md-6 col-lg-8 order-lg-1">
-
-
-          <div class="service-content-card">
-
-
-            <ul class="service-list">
-
-
-              <li class="service-list-item">
 
 
                 <strong class="service-list-title">📋 Visa & Procédures administratives</strong>
@@ -948,7 +851,7 @@ $(document).ready(function() {
   <!-- ======= FOOTER ======= -->
 
 
-  <section class="info_section py-4 bg-dark text-white">
+  <section class="info_section py-4 bg-dark text-white" style="background: #333 !important; color: #fff !important;">
 
 
     <div class="container">
@@ -960,19 +863,19 @@ $(document).ready(function() {
         <div class="col-md-4">
 
 
-          <h5>Liens rapides</h5>
+          <h5 style="color: #fff !important;">Liens rapides</h5>
 
 
           <ul class="list-unstyled">
 
 
-            <li><a href="index.html" class="text-white">Accueil</a></li>
+            <li><a href="index.html" class="text-white" style="color: #fff !important;">Accueil</a></li>
 
 
-            <li><a href="about.html" class="text-white">À propos</a></li>
+            <li><a href="about.html" class="text-white" style="color: #fff !important;">À propos</a></li>
 
 
-            <li><a href="contact.html" class="text-white">Contact</a></li>
+            <li><a href="contact.html" class="text-white" style="color: #fff !important;">Contact</a></li>
 
 
           </ul>
@@ -984,7 +887,7 @@ $(document).ready(function() {
         <div class="col-md-4">
 
 
-          <h5>Newsletter</h5>
+          <h5 style="color: #fff !important;">Newsletter</h5>
 
 
           <form>
@@ -1023,10 +926,10 @@ $(document).ready(function() {
         <div class="col-md-4">
 
 
-          <h5>Contact</h5>
+          <h5 style="color: #fff !important;">Contact</h5>
 
 
-          <p>+01 123455678990<br/>stevemab@gmail.com</p>
+          <p style="color: #fff !important;">+01 123455678990<br/>stevemab@gmail.com</p>
 
 
         </div>
@@ -1038,7 +941,7 @@ $(document).ready(function() {
       <div class="text-center mt-3">
 
 
-        <p>&copy; <span id="displayYear"></span> PrePaDoc / StivMab Consulting. Tous droits rservs.</p>
+        <p style="color: #fff !important;">&copy; <span id="displayYear"></span> PrePaDoc / StivMab Consulting. Tous droits rservs.</p>
 
 
       </div>

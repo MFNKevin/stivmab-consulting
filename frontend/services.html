@@ -19,7 +19,7 @@
   <meta name="description" content="Nos Services - StivMab Consulting" />
 
 
-  <meta name="theme-color" content="#0f2a44" />
+  <meta name="theme-color" content="#f7f5f0" />
 
 
   <title>Nos Services - StivMab Consulting</title>
@@ -55,13 +55,18 @@
 
 
 
+  <!-- Dynamic Theme Stylesheet -->
+  <script>
+    const theme = localStorage.getItem('theme') || 'light';
+    const cssFile = theme === 'dark' ? 'style-dark.css' : 'style-light.css';
+    document.write('<link href="assets/css/' + cssFile + '" rel="stylesheet" />');
+  </script>
+
+
   <!-- Your main stylesheet -->
 
 
   <link href="assets/css/theme.css" rel="stylesheet" />
-
-
-  <link href="assets/css/style.css" rel="stylesheet" />
 
   <link href="assets/css/theme-overrides.css" rel="stylesheet" />
 
@@ -96,80 +101,62 @@
 
 <body>
 
+  <script>
+    // Initialize theme on page load
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    
+    // Listen for theme toggle
+    document.addEventListener('DOMContentLoaded', function() {
+      const btn = document.getElementById('themeToggle');
+      if (btn) {
+        // Set initial icon
+        const isDark = document.body.classList.contains('dark-mode');
+        btn.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        
+        // Attach click listener
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const currentTheme = localStorage.getItem('theme') || 'light';
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', newTheme);
+          if (typeof updateThemeLogo === 'function') updateThemeLogo();
+          location.reload();
+        }, true);
+      }
+    });
+  </script>
 
   <!-- TOPBAR -->
-
-
   <div class="topbar py-2">
-
-
     <div class="container d-flex justify-content-between align-items-center">
-
-
       <div class="d-flex align-items-center">
-
-
+        <div class="social_box">
+          <a href="#" class="mr-2"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="mr-2"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="mr-2"><i class="fab fa-linkedin"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="d-flex align-items-center">
+        <div class="contact_nav d-none d-md-flex mr-3">
+          <a href="tel:+33612345678"><i class="fa fa-phone"></i><span class="ml-1">+33 6 12 34 56 78</span></a>
+          <a href="mailto:contact@stivmab.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">contact@stivmab.com</span></a>
+        </div>
         <div class="theme-toggle mr-3">
           <button id="themeToggle" class="btn-theme-toggle" title="Toggle dark mode">
             <i class="fas fa-moon"></i>
           </button>
         </div>
-
-
-        <div class="lang_box mr-3 d-flex align-items-center">
-
-
+        <div class="lang_box d-flex align-items-center">
           <img src="assets/images/france.png" alt="flag" style="height:18px; margin-right:8px;">
-
-
           <span>Français</span>
-
-
         </div>
-
-
-        <div class="contact_nav d-none d-md-flex">
-
-
-          <a href="tel:+33612345678"><i class="fa fa-phone"></i><span class="ml-1">+33 6 12 34 56 78</span></a>
-
-
-          <a href="mailto:contact@stivmab.com" class="ml-3"><i class="fa fa-envelope"></i><span class="ml-1">contact@stivmab.com</span></a>
-
-
-        </div>
-
-
       </div>
-
-
-      <div class="d-flex align-items-center">
-
-
-        <div class="social_box mr-3">
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-twitter"></i></a>
-
-
-          <a href="#" class="text-white mr-2"><i class="fab fa-linkedin"></i></a>
-
-
-          <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-
-
-        </div>
-
-
-      </div>
-
-
     </div>
-
-
   </div>
 
 
@@ -191,7 +178,7 @@
         <a href="index.html" class="logo-link">
 
 
-          <img src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
+          <img id="theme-logo" src="assets/images/logo.jpg" alt="Logo StivMab Consulting">
 
 
         </a>
@@ -233,7 +220,7 @@
             <li><a href="coaching.html">Coaching</a></li>
 
 
-            <li><a href="about.html">Formation</a></li>
+            <li><a href="about.html">À propos</a></li>
 
 
             <li><a href="investissement.html">Investissements</a></li>
@@ -243,33 +230,6 @@
 
 
             <li><a href="login.html" class="btn-login">Se connecter</a></li>
-
-
-          </ul>
-
-
-        </div>
-
-
-
-
-
-        <div class="logo-dropdown" id="logo-dropdown">
-
-
-          <img id="logo" src="assets/images/logo.jpg" alt="Logo">
-
-
-          <ul id="lang-menu" class="lang-menu">
-
-
-            <li data-lang="fr">FR</li>
-
-
-            <li data-lang="en">EN</li>
-
-
-            <li data-lang="de">DE</li>
 
 
           </ul>
@@ -291,23 +251,11 @@
 
 
   <!-- HERO SECTION -->
-
-
-  <section class="hero py-5" style="background-color: #3d357f; min-height: 300px; display: flex; align-items: center;">
-
-
-    <div class="container text-white text-center">
-
-
+  <section class="hero py-5">
+    <div class="container">
       <h1>Nos Services</h1>
-
-
-      <p>Accompagnement complet pour votre russite en Allemagne</p>
-
-
+      <p>Accompagnement complet pour votre réussite en Allemagne</p>
     </div>
-
-
   </section>
 
 
